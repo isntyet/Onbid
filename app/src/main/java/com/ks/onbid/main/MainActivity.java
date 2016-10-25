@@ -2,7 +2,8 @@ package com.ks.onbid.main;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.TextView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.ks.onbid.R;
 import com.ks.onbid.request.AddrCodeFirstRequest;
@@ -17,23 +18,24 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView joJo;
+    private RecyclerView rvSaleList;
+    private ArrayList<String> saleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<String> tmp = onAddrCodeThirdRequest("부산진구");
+        rvSaleList = (RecyclerView) findViewById(R.id.rv_sale_list);
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        rvSaleList.setHasFixedSize(true);
+        rvSaleList.setLayoutManager(layoutManager);
 
-        String temp = "hahaha";
-        //temp = userCodeMiddleRequest();
+        saleList = onAddrCodeThirdRequest("부산진구");
 
-        temp = tmp.toString();
+        rvSaleList.setAdapter(new SaleAdapter(getApplicationContext(),saleList, R.layout.activity_main));
 
-        joJo = (TextView) findViewById(R.id.jojo);
-        joJo.setText(temp);
     }
 
 
