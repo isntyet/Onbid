@@ -77,40 +77,38 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.beardedhen.androidbootstrap.BootstrapButton
+                        <Button
+                            android:id="@+id/btn_dpsl_1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
+                            android:background="@drawable/round_btn_click"
                             android:text="전체"
-                            app:bootstrapBrand="primary"
-                            app:bootstrapSize="lg"
-                            app:buttonMode="radio"
-                            app:roundedCorners="true"
-                            app:showOutline="true" />
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/button_text_size" />
 
-                        <com.beardedhen.androidbootstrap.BootstrapButton
+                        <Button
+                            android:id="@+id/btn_dpsl_2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
+                            android:background="@drawable/round_btn_unclick"
                             android:text="매각"
-                            app:bootstrapBrand="primary"
-                            app:bootstrapSize="lg"
-                            app:buttonMode="radio"
-                            app:roundedCorners="true"
-                            app:showOutline="true" />
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/button_text_size" />
 
-                        <com.beardedhen.androidbootstrap.BootstrapButton
+                        <Button
+                            android:id="@+id/btn_dpsl_3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_weight="1"
+                            android:background="@drawable/round_btn_unclick"
                             android:text="임대"
-                            app:bootstrapBrand="primary"
-                            app:bootstrapSize="lg"
-                            app:buttonMode="radio"
-                            app:roundedCorners="true"
-                            app:showOutline="true" />
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/button_text_size" />
+
 
                     </LinearLayout>
                 </LinearLayout>
@@ -135,40 +133,37 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.beardedhen.androidbootstrap.BootstrapButton
+                        <Button
+                            android:id="@+id/btn_use_1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
+                            android:background="@drawable/round_press_btn_unclick"
                             android:text="전체"
-                            app:bootstrapBrand="primary"
-                            app:bootstrapSize="lg"
-                            app:buttonMode="radio"
-                            app:roundedCorners="true"
-                            app:showOutline="true" />
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/button_text_size" />
 
-                        <com.beardedhen.androidbootstrap.BootstrapButton
+                        <Button
+                            android:id="@+id/btn_use_2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
-                            android:text="선택"
-                            app:bootstrapBrand="primary"
-                            app:bootstrapSize="lg"
-                            app:buttonMode="radio"
-                            app:roundedCorners="true"
-                            app:showOutline="true" />
+                            android:background="@drawable/round_press_btn_unclick"
+                            android:text="전체"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/button_text_size" />
 
-                        <com.beardedhen.androidbootstrap.BootstrapButton
+                        <Button
+                            android:id="@+id/btn_use_3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_weight="1"
-                            android:text="선택"
-                            app:bootstrapBrand="primary"
-                            app:bootstrapSize="lg"
-                            app:buttonMode="radio"
-                            app:roundedCorners="true"
-                            app:showOutline="true" />
+                            android:background="@drawable/round_press_btn_unclick"
+                            android:text="전체"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/button_text_size" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -193,40 +188,37 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <com.beardedhen.androidbootstrap.BootstrapButton
+                        <Button
+                            android:id="@+id/btn_addr_1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
+                            android:background="@drawable/round_btn_unclick"
                             android:text="전체"
-                            app:bootstrapBrand="primary"
-                            app:bootstrapSize="lg"
-                            app:buttonMode="radio"
-                            app:roundedCorners="true"
-                            app:showOutline="true" />
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/button_text_size" />
 
-                        <com.beardedhen.androidbootstrap.BootstrapButton
+                        <Button
+                            android:id="@+id/btn_addr_2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
-                            android:text="선택"
-                            app:bootstrapBrand="primary"
-                            app:bootstrapSize="lg"
-                            app:buttonMode="radio"
-                            app:roundedCorners="true"
-                            app:showOutline="true" />
+                            android:background="@drawable/round_btn_unclick"
+                            android:text="전체"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/button_text_size" />
 
-                        <com.beardedhen.androidbootstrap.BootstrapButton
+                        <Button
+                            android:id="@+id/btn_addr_3"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="30dp"
                             android:layout_weight="1"
-                            android:text="선택"
-                            app:bootstrapBrand="primary"
-                            app:bootstrapSize="lg"
-                            app:buttonMode="radio"
-                            app:roundedCorners="true"
-                            app:showOutline="true" />
+                            android:background="@drawable/round_btn_unclick"
+                            android:text="전체"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/button_text_size" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -247,12 +239,10 @@
     </android.support.design.widget.AppBarLayout>
 
 
-
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_sale_list"
@@ -261,8 +251,6 @@
 
 
     </android.support.v4.widget.NestedScrollView>
-
-
 
 
 </android.support.design.widget.CoordinatorLayout>

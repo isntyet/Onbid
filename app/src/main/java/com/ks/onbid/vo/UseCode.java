@@ -3,17 +3,17 @@ package com.ks.onbid.vo;
 /**
  * Created by jo on 2016-10-22.
  */
-public class UseCodeTop {
+public class UseCode {
 
     private String RNUM;
     private String CTGR_ID;
     private String CTGR_NM;
 
-    public UseCodeTop(){
+    public UseCode(){
 
     }
 
-    UseCodeTop(String rnum, String ctgr_id, String ctgr_nm){
+    public UseCode(String rnum, String ctgr_id, String ctgr_nm){
         RNUM = rnum;
         CTGR_ID = ctgr_id;
         CTGR_NM = ctgr_nm;

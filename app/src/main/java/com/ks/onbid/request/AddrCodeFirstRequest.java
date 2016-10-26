@@ -66,6 +66,9 @@ public class AddrCodeFirstRequest extends ApiRequest {
                 eventType = parser.next();
             }
 
+            String all = new String("전체");
+            list.add(0, all);
+
         } catch (XmlPullParserException e) {
             e.printStackTrace();
         } catch (IOException e) {

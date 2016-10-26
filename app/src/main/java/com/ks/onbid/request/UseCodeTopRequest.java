@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.ks.onbid.utill.ApiRequest;
 import com.ks.onbid.utill.KeyData;
-import com.ks.onbid.vo.UseCodeTop;
+import com.ks.onbid.vo.UseCode;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -29,19 +29,19 @@ public class UseCodeTopRequest extends ApiRequest {
         super.setParam("pageNo", "1");
     }
 
-    public ArrayList<UseCodeTop> startRequest() {
+    public ArrayList<UseCode> startRequest() {
         setUrlName("/OnbidCodeInfoInquireSvc/getOnbidTopCodeInfo");
         return xmlData(request());
     }
 
-    public ArrayList<UseCodeTop> xmlData(XmlPullParser parser){
+    public ArrayList<UseCode> xmlData(XmlPullParser parser){
 
-        ArrayList<UseCodeTop> list = new ArrayList<>();
+        ArrayList<UseCode> list = new ArrayList<>();
 
         try {
             int eventType = parser.getEventType();
 
-            UseCodeTop data = null;
+            UseCode data = null;
 
             while (eventType != XmlPullParser.END_DOCUMENT) {
                 switch (eventType) {
@@ -51,7 +51,7 @@ public class UseCodeTopRequest extends ApiRequest {
                         String startTag = parser.getName();
 
                         if ("item".equals(startTag)) {
-                            data = new UseCodeTop();
+                            data = new UseCode();
                         } else if ("RNUM".equals(startTag)) {
                             data.setRNUM(parser.nextText());
                         } else if ("CTGR_ID".equals(startTag)) {
@@ -69,6 +69,8 @@ public class UseCodeTopRequest extends ApiRequest {
                 }
                 eventType = parser.next();
             }
+            UseCode all = new UseCode("0", "", "전체");
+            list.add(0, all);
 
         } catch (XmlPullParserException e) {
             e.printStackTrace();
@@ -79,9 +81,9 @@ public class UseCodeTopRequest extends ApiRequest {
         Log.d("UseCodeTop_CNT", list.size() +"");
 
         //데이터 확인용
-        /*Iterator<UseCodeTop> iterator = list.iterator();
+        /*Iterator<UseCode> iterator = list.iterator();
         while (iterator.hasNext()) {
-            UseCodeTop tmp = (UseCodeTop) iterator.next();
+            UseCodeTop tmp = (UseCode) iterator.next();
             Log.d("hohoho", tmp.getCTGR_NM().toString());
         }*/
 
