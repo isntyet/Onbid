@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.ks.onbid.R;
 import com.ks.onbid.request.AddrCodeFirstRequest;
@@ -364,49 +365,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             btnDateTo.setBackgroundResource(R.drawable.round_press_btn_click);
             dateToValue = date;
         }
+
+        Log.d("choice_date", date);
+        Toast.makeText(this, date, Toast.LENGTH_LONG).show();
     }
 
-
-
-    /*@Override
-    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth, int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
-        String strMonth = "";
-        String strMonthEnd = "";
-        String strDay = "";
-        String strDayEnd = "";
-
-        monthOfYear++;
-        monthOfYearEnd++;
-
-        strMonth = monthOfYear < 10 ? "0" + monthOfYear : "" + monthOfYear;
-        strMonthEnd = monthOfYearEnd < 10 ? "0" + monthOfYearEnd : "" + monthOfYearEnd;
-        strDay = dayOfMonth < 10 ? "0" + dayOfMonth : "" + dayOfMonth;
-        strDayEnd = dayOfMonthEnd < 10 ? "0" + dayOfMonthEnd : "" + dayOfMonthEnd;
-
-        String dateFrom = "" + year + strMonth + strDay;
-        String dateTo = "" + yearEnd + strMonthEnd + strDayEnd;
-
-        btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_click);
-        btnDateFrom.setText(year + "-" + strMonth + "-" + strDay);
-        dateFromValue = dateFrom;
-        btnDateTo.setBackgroundResource(R.drawable.round_press_btn_click);
-        btnDateTo.setText(yearEnd + "-" + strMonthEnd + "-" + strDayEnd);
-        dateToValue = dateTo;
-
-        if(SysUtill.strToInt(dateFrom) > SysUtill.strToInt(dateTo)){
-            btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_unclick);
-            btnDateTo.setBackgroundResource(R.drawable.round_press_btn_unclick);
-            btnDateFrom.setText("전체");
-            btnDateTo.setText("전체");
-            dateFromValue = "";
-            dateToValue = "";
-
-            Toast.makeText(this, "시작기간이 끝기간보다 나중이면 안됩니다.", Toast.LENGTH_LONG).show();
-        } else {
-            Log.d("choice_date", dateFrom + " ~ " + dateTo);
-            Toast.makeText(this, dateFrom + " ~ " + dateTo, Toast.LENGTH_LONG).show();
-        }
-    }*/
 /*
     private String listRequest(){
         SaleListApiRequest request = new SaleListApiRequest(this);
