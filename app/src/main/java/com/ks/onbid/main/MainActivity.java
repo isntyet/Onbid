@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //123523352
     //13242323423463
+    //aaabbbccc
     //처분방식 버튼
     private Button[] btnDPSL;
 
