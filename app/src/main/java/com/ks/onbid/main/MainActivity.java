@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private RecyclerView rvSaleList;
 
+    //123523352
     //처분방식 버튼
     private Button[] btnDPSL;
 
