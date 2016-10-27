@@ -8,7 +8,9 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.borax12.materialdaterangepicker.date.DatePickerDialog;
 import com.ks.onbid.R;
 import com.ks.onbid.request.AddrCodeFirstRequest;
 import com.ks.onbid.request.AddrCodeSecondRequest;
@@ -16,23 +18,22 @@ import com.ks.onbid.request.AddrCodeThirdRequest;
 import com.ks.onbid.request.UseCodeBottomRequest;
 import com.ks.onbid.request.UseCodeMiddleRequest;
 import com.ks.onbid.request.UseCodeTopRequest;
+import com.ks.onbid.utill.SysUtill;
 import com.ks.onbid.vo.UseCode;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnItemClickListener;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
 
     private RecyclerView rvSaleList;
 
-    //123523352
-    //13242323423463
-    //asdfasdfjjojojo
     //처분방식 버튼
     private Button[] btnDPSL;
 
-    //처분방식 플래그 0 = 전체("")  1 = 매각("1000")  2 = 임대("2000")
+    //처분방식 플래그 0 = 전체("")  1 = 매각("0001")  2 = 임대("0002")
     private int DPSL_FLAG = 0;
 
     //용도 버튼
@@ -50,6 +51,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String addrValue_1 ="";
     private String addrValue_2 ="";
     private String addrValue_3 ="";
+
+    //입찰기간 버튼
+    private Button btnDateFrom;
+    private Button btnDateTo;
+
+    private String dateFromValue = "";
+    private String dateToValue = "";
 
 
     private ArrayList<String> saleList;
@@ -121,6 +129,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnAddr[0].setBackgroundResource(R.drawable.round_press_btn_unclick);
         btnAddr[1].setBackgroundResource(R.drawable.round_press_btn_unclick);
         btnAddr[2].setBackgroundResource(R.drawable.round_press_btn_unclick);
+
+        ////////////////////////////////입찰기간 버튼 초기 세팅
+
+        btnDateFrom = (Button) findViewById(R.id.btn_date_from);
+        btnDateFrom.setOnClickListener(this);
+
+        btnDateTo = (Button) findViewById(R.id.btn_date_to);
+        btnDateTo.setOnClickListener(this);
+
+        btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_unclick);
+        btnDateTo.setBackgroundResource(R.drawable.round_press_btn_unclick);
     }
 
 
@@ -188,7 +207,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if((v.getId() == btnAddr[2].getId()) && (!"".equals(addrValue_2))){
             ArrayList<String> list = onAddrCodeThirdRequest(addrValue_2);
             loadAddrDialog(list, btnAddr[2]);
+        } else if(((v.getId() == btnDateFrom.getId()) || (v.getId() == btnDateTo.getId())) && ("".equals(dateFromValue)) && ("".equals(dateToValue))){
+            loadCanlenderDialog();
+        } else if(((v.getId() == btnDateFrom.getId()) || (v.getId() == btnDateTo.getId())) && (!"".equals(dateFromValue)) && (!"".equals(dateToValue))){
+            btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_unclick);
+            btnDateTo.setBackgroundResource(R.drawable.round_press_btn_unclick);
+            btnDateFrom.setText("전체");
+            btnDateTo.setText("전체");
+            dateFromValue = "";
+            dateToValue = "";
+
+            loadCanlenderDialog();
         }
+    }
+
+    private void loadCanlenderDialog(){
+        Calendar now = Calendar.getInstance();
+        DatePickerDialog dpd = com.borax12.materialdaterangepicker.date.DatePickerDialog.newInstance(
+                MainActivity.this,
+                now.get(Calendar.YEAR),
+                now.get(Calendar.MONTH),
+                now.get(Calendar.DAY_OF_MONTH)
+        );
+        dpd.setAutoHighlight(true);
+        dpd.show(getFragmentManager(), "Datepickerdialog");
     }
 
     private void setDpslButton(View v){
@@ -299,6 +341,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setExpanded(false)  // This will enable the expand feature, (similar to android L share dialog)
                 .create();
         dialog.show();
+    }
+
+
+    @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth, int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
+        String strMonth = "";
+        String strMonthEnd = "";
+        String strDay = "";
+        String strDayEnd = "";
+
+        monthOfYear++;
+        monthOfYearEnd++;
+
+        strMonth = monthOfYear < 10 ? "0" + monthOfYear : "" + monthOfYear;
+        strMonthEnd = monthOfYearEnd < 10 ? "0" + monthOfYearEnd : "" + monthOfYearEnd;
+        strDay = dayOfMonth < 10 ? "0" + dayOfMonth : "" + dayOfMonth;
+        strDayEnd = dayOfMonthEnd < 10 ? "0" + dayOfMonthEnd : "" + dayOfMonthEnd;
+
+        String dateFrom = "" + year + strMonth + strDay;
+        String dateTo = "" + yearEnd + strMonthEnd + strDayEnd;
+
+        btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_click);
+        btnDateFrom.setText(year + "-" + strMonth + "-" + strDay);
+        dateFromValue = dateFrom;
+        btnDateTo.setBackgroundResource(R.drawable.round_press_btn_click);
+        btnDateTo.setText(yearEnd + "-" + strMonthEnd + "-" + strDayEnd);
+        dateToValue = dateTo;
+
+        if(SysUtill.strToInt(dateFrom) > SysUtill.strToInt(dateTo)){
+            btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_unclick);
+            btnDateTo.setBackgroundResource(R.drawable.round_press_btn_unclick);
+            btnDateFrom.setText("전체");
+            btnDateTo.setText("전체");
+            dateFromValue = "";
+            dateToValue = "";
+
+            Toast.makeText(this, "시작기간이 끝기간보다 나중이면 안됩니다.", Toast.LENGTH_LONG).show();
+        } else {
+            Log.d("choice_date", dateFrom + " ~ " + dateTo);
+            Toast.makeText(this, dateFrom + " ~ " + dateTo, Toast.LENGTH_LONG).show();
+        }
     }
 /*
     private String listRequest(){
