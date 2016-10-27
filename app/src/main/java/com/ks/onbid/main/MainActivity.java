@@ -8,9 +8,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.borax12.materialdaterangepicker.date.DatePickerDialog;
 import com.ks.onbid.R;
 import com.ks.onbid.request.AddrCodeFirstRequest;
 import com.ks.onbid.request.AddrCodeSecondRequest;
@@ -18,10 +16,10 @@ import com.ks.onbid.request.AddrCodeThirdRequest;
 import com.ks.onbid.request.UseCodeBottomRequest;
 import com.ks.onbid.request.UseCodeMiddleRequest;
 import com.ks.onbid.request.UseCodeTopRequest;
-import com.ks.onbid.utill.SysUtill;
 import com.ks.onbid.vo.UseCode;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnItemClickListener;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -56,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnDateFrom;
     private Button btnDateTo;
 
+    //1 = FROM  2 = TO
+    private int DATE_FLAG = 1;
     private String dateFromValue = "";
     private String dateToValue = "";
 
@@ -207,29 +207,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if((v.getId() == btnAddr[2].getId()) && (!"".equals(addrValue_2))){
             ArrayList<String> list = onAddrCodeThirdRequest(addrValue_2);
             loadAddrDialog(list, btnAddr[2]);
-        } else if(((v.getId() == btnDateFrom.getId()) || (v.getId() == btnDateTo.getId())) && ("".equals(dateFromValue)) && ("".equals(dateToValue))){
-            loadCanlenderDialog();
-        } else if(((v.getId() == btnDateFrom.getId()) || (v.getId() == btnDateTo.getId())) && (!"".equals(dateFromValue)) && (!"".equals(dateToValue))){
+        } else if((v.getId() == btnDateFrom.getId())){
             btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_unclick);
-            btnDateTo.setBackgroundResource(R.drawable.round_press_btn_unclick);
-            btnDateFrom.setText("전체");
-            btnDateTo.setText("전체");
+            btnDateFrom.setText("-");
             dateFromValue = "";
-            dateToValue = "";
-
+            DATE_FLAG = 1;
+            loadCanlenderDialog();
+        } else if((v.getId() == btnDateTo.getId())){
+            btnDateTo.setBackgroundResource(R.drawable.round_press_btn_unclick);
+            btnDateTo.setText("-");
+            dateFromValue = "";
+            DATE_FLAG = 2;
             loadCanlenderDialog();
         }
     }
 
     private void loadCanlenderDialog(){
         Calendar now = Calendar.getInstance();
-        DatePickerDialog dpd = com.borax12.materialdaterangepicker.date.DatePickerDialog.newInstance(
+        DatePickerDialog dpd = DatePickerDialog.newInstance(
                 MainActivity.this,
                 now.get(Calendar.YEAR),
                 now.get(Calendar.MONTH),
                 now.get(Calendar.DAY_OF_MONTH)
         );
-        dpd.setAutoHighlight(true);
         dpd.show(getFragmentManager(), "Datepickerdialog");
     }
 
@@ -343,8 +343,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialog.show();
     }
 
-
     @Override
+    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+        String strMonth = "";
+        String strDay = "";
+
+        monthOfYear++;
+
+        strMonth = monthOfYear < 10 ? "0" + monthOfYear : "" + monthOfYear;
+        strDay = dayOfMonth < 10 ? "0" + dayOfMonth : "" + dayOfMonth;
+
+        String date = "" + year + strMonth + strDay;
+
+        if(DATE_FLAG == 1){
+            btnDateFrom.setText(year + "-" + strMonth + "-" + strDay);
+            btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_click);
+            dateFromValue = date;
+        } else if(DATE_FLAG == 2){
+            btnDateTo.setText(year + "-" + strMonth + "-" + strDay);
+            btnDateTo.setBackgroundResource(R.drawable.round_press_btn_click);
+            dateToValue = date;
+        }
+    }
+
+
+
+    /*@Override
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth, int yearEnd, int monthOfYearEnd, int dayOfMonthEnd) {
         String strMonth = "";
         String strMonthEnd = "";
@@ -382,7 +406,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.d("choice_date", dateFrom + " ~ " + dateTo);
             Toast.makeText(this, dateFrom + " ~ " + dateTo, Toast.LENGTH_LONG).show();
         }
-    }
+    }*/
 /*
     private String listRequest(){
         SaleListApiRequest request = new SaleListApiRequest(this);

@@ -250,7 +250,7 @@
                             android:layout_marginRight="5dp"
                             android:layout_weight="1"
                             android:background="@drawable/round_btn_unclick"
-                            android:text="전체"
+                            android:text="-"
                             android:textColor="#ffffff"
                             android:textSize="@dimen/button_text_size" />
 
@@ -270,7 +270,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_weight="1"
                             android:background="@drawable/round_btn_unclick"
-                            android:text="전체"
+                            android:text="-"
                             android:textColor="#ffffff"
                             android:textSize="@dimen/button_text_size" />
 

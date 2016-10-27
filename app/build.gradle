@@ -27,5 +27,5 @@ dependencies {
     compile 'com.android.support:cardview-v7:23.1.1'
 
     compile 'com.orhanobut:dialogplus:1.11@aar'
-    compile 'com.borax12.materialdaterangepicker:library:1.9'
+    compile 'com.wdullaer:materialdatetimepicker:2.5.0'
 }
