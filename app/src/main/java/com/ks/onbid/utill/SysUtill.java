@@ -1,5 +1,10 @@
 package com.ks.onbid.utill;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  * Created by jo on 2016-10-27.
  */
@@ -82,6 +87,30 @@ public class SysUtill {
             return Double.parseDouble(value);
         } catch (Exception e) {
             return 0;
+        }
+    }
+
+    public static Date getCurrentTime(){
+        Calendar cd = Calendar.getInstance();
+        Date date = cd.getTime();
+
+        return date;
+    }
+
+    public static Date strToDttm(String dttm) {
+        return strToDttm(dttm, "yyyyMMddHHmmss");
+    }
+
+    public static Date strToDttm(String dttm, String pattern) {
+        SimpleDateFormat sdf1 = new SimpleDateFormat(pattern, Locale.KOREA);
+        try {
+            return sdf1.parse(dttm);
+        } catch (Exception e1) {
+            try {
+                return sdf1.parse("19000101000000");
+            } catch (Exception e2) {
+                return null;
+            }
         }
     }
 }

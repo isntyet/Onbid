@@ -8,22 +8,28 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ks.onbid.R;
 import com.ks.onbid.request.AddrCodeFirstRequest;
 import com.ks.onbid.request.AddrCodeSecondRequest;
 import com.ks.onbid.request.AddrCodeThirdRequest;
+import com.ks.onbid.request.SaleListApiRequest;
 import com.ks.onbid.request.UseCodeBottomRequest;
 import com.ks.onbid.request.UseCodeMiddleRequest;
 import com.ks.onbid.request.UseCodeTopRequest;
+import com.ks.onbid.utill.SysUtill;
+import com.ks.onbid.vo.SaleItem;
 import com.ks.onbid.vo.UseCode;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.OnItemClickListener;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
 
@@ -60,8 +66,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String dateFromValue = "";
     private String dateToValue = "";
 
+    //감정가 입력
+    private EditText etGoodsPriceFrom;
+    private EditText etGoodsPriceTo;
 
-    private ArrayList<String> saleList;
+    //최저입찰가 입력
+    private EditText etOpenPriceFrom;
+    private EditText etOpenPriceTo;
+
+    //관리번호, 물건명 입력
+    private EditText etGoodNo;
+    private EditText etGoodName;
+
+
+    private ArrayList<SaleItem> saleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,19 +90,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setInitUI();
 
 
-        rvSaleList = (RecyclerView) findViewById(R.id.rv_sale_list);
+        getSaleList();
+    }
 
+    private void getSaleList(){
+        //saleList.clear();
+        saleList = onlistRequest();
+        rvSaleList.removeAllViewsInLayout();
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        rvSaleList.setHasFixedSize(true);
+        rvSaleList.setLayoutManager(layoutManager);
+        rvSaleList.setAdapter(new SaleAdapter(getApplicationContext(),saleList, R.layout.activity_main));
+    }
+
+    private void setInitUI(){
+        rvSaleList = (RecyclerView) findViewById(R.id.rv_sale_list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         rvSaleList.setHasFixedSize(true);
         rvSaleList.setLayoutManager(layoutManager);
 
-        saleList = onAddrCodeThirdRequest("부산진구");
-
-        rvSaleList.setAdapter(new SaleAdapter(getApplicationContext(),saleList, R.layout.activity_main));
-
-    }
-
-    private void setInitUI(){
         /////////////////////////////////처분방식 버튼 초기 세팅
         btnDPSL = new Button[3];
 
@@ -140,7 +164,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDateTo.setOnClickListener(this);
 
         btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_unclick);
-        btnDateTo.setBackgroundResource(R.drawable.round_press_btn_unclick);
+        btnDateTo.setBackgroundResource(R.drawable.round_press_btn_click);
+
+        Date date = SysUtill.getCurrentTime();
+        dateToValue =  new SimpleDateFormat("yyyyMMdd").format(date);
+        btnDateTo.setText(new SimpleDateFormat("yyyy-MM-dd").format(date));
+
+
+        ////////////////////////////////감정가 초기 세팅
+
+        etGoodsPriceFrom = (EditText) findViewById(R.id.et_goods_price_from);
+        etGoodsPriceTo = (EditText) findViewById(R.id.et_goods_price_to);
+
+        ////////////////////////////////최저입찰가 초기 세팅
+
+        etOpenPriceFrom = (EditText) findViewById(R.id.et_open_price_from);
+        etOpenPriceTo = (EditText) findViewById(R.id.et_open_price_to);
+
+        ////////////////////////////////물건번호, 물건명 세팅
+
+        etGoodNo = (EditText) findViewById(R.id.et_good_no);
+        etGoodName = (EditText) findViewById(R.id.et_good_name);
     }
 
 
@@ -217,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if((v.getId() == btnDateTo.getId())){
             btnDateTo.setBackgroundResource(R.drawable.round_press_btn_unclick);
             btnDateTo.setText("-");
-            dateFromValue = "";
+            dateToValue = "";
             DATE_FLAG = 2;
             loadCanlenderDialog();
         }
@@ -370,10 +414,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this, date, Toast.LENGTH_LONG).show();
     }
 
-/*
-    private String listRequest(){
+
+    private ArrayList<SaleItem> onlistRequest(){
         SaleListApiRequest request = new SaleListApiRequest(this);
-        request.setParams("0001", "10000", "10100", "부산광역시", "부산진구", "연지동", "", "", "", "", "", "", "", "", "1");
+
+        String DPSLValue = "";
+        if(DPSL_FLAG == 1){
+            DPSLValue = "0001";
+        } if(DPSL_FLAG == 2){
+            DPSLValue = "0002";
+        }
+
+        String goodsPriceFrom = "" + etGoodsPriceFrom.getText().toString();
+        String goodsPriceTo = "" + etGoodsPriceTo.getText().toString();
+
+        String openPriceFrom = "" + etOpenPriceFrom.getText().toString();
+        String openPriceTo = "" + etOpenPriceTo.getText().toString();
+
+        String goodName = "" + etGoodName.getText().toString();
+        String goodNo = "" + etGoodNo.getText().toString();
+
+
+        request.setParams(DPSLValue, useValue_1, useValue_2, addrValue_1, addrValue_2, addrValue_3, goodsPriceFrom, goodsPriceTo, openPriceFrom, openPriceTo, goodName, dateFromValue, dateToValue, goodNo, "1");
         return request.startRequest();
-    }*/
+    }
 }
