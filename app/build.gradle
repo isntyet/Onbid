@@ -1,12 +1,20 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'OnBidKey'
+            keyPassword 'android'
+            storeFile file('C:/Java/jdk1.8.0_73/bin/debug.keystore')
+            storePassword 'android'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.ks.onbid"
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -15,6 +23,9 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
         }
     }
 }
@@ -27,6 +38,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:23.1.1'
     compile 'com.android.support:recyclerview-v7:23.1.1'
 
+    compile group: 'com.kakao.sdk', name: 'kakaotalk', version: project.KAKAO_SDK_VERSION
     compile 'com.orhanobut:dialogplus:1.11@aar'
     compile 'com.wdullaer:materialdatetimepicker:2.5.0'
 }

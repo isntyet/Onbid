@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Onbid</string>
+    <string name="kakao_app_key">5d92e27b39e8778211147979a0ce38f2</string>
 </resources>
