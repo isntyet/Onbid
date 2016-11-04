@@ -1,14 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'OnBidKey'
-            keyPassword 'android'
-            storeFile file('C:/Java/jdk1.8.0_73/bin/debug.keystore')
-            storePassword 'android'
-        }
-    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
 
@@ -23,9 +15,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            signingConfig signingConfigs.config
+
         }
     }
 }
