@@ -1,5 +1,7 @@
 package com.ks.onbid.main;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,9 +11,13 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gordonwong.materialsheetfab.MaterialSheetFab;
+import com.gordonwong.materialsheetfab.MaterialSheetFabEventListener;
 import com.ks.onbid.R;
+import com.ks.onbid.community.CommunityActivity;
 import com.ks.onbid.request.AddrCodeFirstRequest;
 import com.ks.onbid.request.AddrCodeSecondRequest;
 import com.ks.onbid.request.AddrCodeThirdRequest;
@@ -19,6 +25,7 @@ import com.ks.onbid.request.SaleListApiRequest;
 import com.ks.onbid.request.UseCodeBottomRequest;
 import com.ks.onbid.request.UseCodeMiddleRequest;
 import com.ks.onbid.request.UseCodeTopRequest;
+import com.ks.onbid.setup.SetupActivity;
 import com.ks.onbid.utill.SysUtill;
 import com.ks.onbid.vo.SaleItem;
 import com.ks.onbid.vo.UseCode;
@@ -78,6 +85,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText etGoodNo;
     private EditText etGoodName;
 
+    //fab button
+    private MaterialSheetFab materialSheetFab;
+    private int statusBarColor;
+
+    //fab menu
+    private TextView btnSetup;
+    private TextView btnSearch;
+    private TextView btnCommunity;
+    private TextView btnBoard;
+
 
     private ArrayList<SaleItem> saleList;
 
@@ -86,11 +103,65 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         setInitUI();
 
-
         getSaleList();
+
+        setupFab();
+    }
+
+    private void setupFab() {
+
+        FabButton fab = (FabButton) findViewById(R.id.btn_menu);
+        View sheetView = findViewById(R.id.fab_sheet);
+        View overlay = findViewById(R.id.overlay);
+        int sheetColor = getResources().getColor(R.color.menu_btn_sheet_bg);
+        int fabColor = getResources().getColor(R.color.colorAccent);
+
+        // Create material sheet FAB
+        materialSheetFab = new MaterialSheetFab<>(fab, sheetView, overlay, sheetColor, fabColor);
+
+        // Set material sheet event listener
+        materialSheetFab.setEventListener(new MaterialSheetFabEventListener() {
+            @Override
+            public void onShowSheet() {
+                // Save current status bar color
+                statusBarColor = getStatusBarColor();
+                // Set darker status bar color to match the dim overlay
+                setStatusBarColor(getResources().getColor(R.color.buttonColor));
+            }
+
+            @Override
+            public void onHideSheet() {
+                // Restore status bar color
+                setStatusBarColor(statusBarColor);
+            }
+        });
+
+        btnSetup = (TextView) findViewById(R.id.btn_setup);
+        btnSetup.setOnClickListener(this);
+
+        btnSearch = (TextView) findViewById(R.id.btn_search);
+        btnSearch.setOnClickListener(this);
+
+        btnCommunity = (TextView) findViewById(R.id.btn_community);
+        btnCommunity.setOnClickListener(this);
+
+        btnBoard = (TextView) findViewById(R.id.btn_board);
+        btnBoard.setOnClickListener(this);
+    }
+
+    private int getStatusBarColor() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return getWindow().getStatusBarColor();
+        }
+        return 0;
+    }
+
+    private void setStatusBarColor(int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(color);
+        }
     }
 
     private void getSaleList(){
@@ -264,6 +335,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             dateToValue = "";
             DATE_FLAG = 2;
             loadCanlenderDialog();
+        } else if(v.getId() == btnSetup.getId()){
+            startActivity(new Intent(this, SetupActivity.class));
+        } else if(v.getId() == btnCommunity.getId()){
+            startActivity(new Intent(this, CommunityActivity.class));
         }
     }
 
@@ -437,5 +512,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         request.setParams(DPSLValue, useValue_1, useValue_2, addrValue_1, addrValue_2, addrValue_3, goodsPriceFrom, goodsPriceTo, openPriceFrom, openPriceTo, goodName, dateFromValue, dateToValue, goodNo, "1");
         return request.startRequest();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (materialSheetFab.isSheetVisible()) {
+            materialSheetFab.hideSheet();
+        } else {
+            super.onBackPressed();
+        }
     }
 }

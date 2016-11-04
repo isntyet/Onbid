@@ -447,9 +447,9 @@
                             android:layout_marginRight="5dp"
                             android:layout_weight="1"
                             android:background="@drawable/round_btn_unclick"
+                            android:digits="0123456789-"
                             android:gravity="center"
                             android:inputType="numberSigned"
-                            android:digits="0123456789-"
                             android:textColor="#ffffff"
                             android:textSize="@dimen/button_text_size" />
 
@@ -508,6 +508,7 @@
 
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/test"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -515,11 +516,122 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_sale_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:layout_height="match_parent" />
 
 
     </android.support.v4.widget.NestedScrollView>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+
+        <com.ks.onbid.main.FabButton
+            android:id="@+id/btn_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="normal"
+            android:src="@drawable/ic_menu"
+            app:elevation="4dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+
+        <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <io.codetail.widget.RevealLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end|bottom"
+            android:orientation="vertical"
+            >
+
+            <!-- Sheet that contains your items -->
+            <android.support.v7.widget.CardView
+                android:id="@+id/fab_sheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                app:cardBackgroundColor="#ffffff"
+                app:cardElevation="0dp"
+                app:cardMaxElevation="4dp"
+                app:contentPadding="-3dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary">
+
+                    <TextView
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_search"
+                        android:padding="16dp"
+                        android:textSize="16sp"
+                        android:textColor="#ffffff"
+                        android:drawablePadding="24dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/ic_search"
+                        android:text="검색 재설정(맨위로)" />
+
+                </LinearLayout>
+
+                    <TextView
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_community"
+                        android:padding="16dp"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:drawablePadding="24dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/ic_community"
+                        android:text="커뮤니티 모음" />
+
+                    <TextView
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_board"
+                        android:padding="16dp"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:drawablePadding="24dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/ic_board"
+                        android:text="자유게시판" />
+
+                    <TextView
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_setup"
+                        android:padding="16dp"
+                        android:textSize="16sp"
+                        android:textColor="#000000"
+                        android:drawablePadding="24dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/ic_setup"
+                        android:text="설정하기" />
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </io.codetail.widget.RevealLinearLayout>
+
+    </RelativeLayout>
 </android.support.design.widget.CoordinatorLayout>

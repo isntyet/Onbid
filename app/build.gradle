@@ -31,4 +31,5 @@ dependencies {
     compile group: 'com.kakao.sdk', name: 'kakaotalk', version: project.KAKAO_SDK_VERSION
     compile 'com.orhanobut:dialogplus:1.11@aar'
     compile 'com.wdullaer:materialdatetimepicker:2.5.0'
+    compile 'com.gordonwong:material-sheet-fab:1.2.1'
 }

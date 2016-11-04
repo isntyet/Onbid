@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="buttonColor">#5FD5EC</color>
+    <color name="menu_btn_sheet_bg">#FFFFFF</color>
 </resources>
