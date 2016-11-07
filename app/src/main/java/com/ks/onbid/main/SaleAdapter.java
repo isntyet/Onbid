@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.ks.onbid.R;
 import com.ks.onbid.utill.SysUtill;
 import com.ks.onbid.vo.SaleItem;
+import com.lid.lib.LabelTextView;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -43,6 +44,7 @@ public class SaleAdapter extends RecyclerView.Adapter<SaleAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         final SaleItem item = items.get(position);
         holder.title.setText(item.getCLTR_NM());
+        holder.title.setLabelText(item.getDPSL_MTD_NM());
 
         Date begn_dtm = SysUtill.strToDttm(item.getPBCT_BEGN_DTM());
         String str_begn_dtm =  new SimpleDateFormat("yyyy-MM-dd HH:mm").format(begn_dtm);
@@ -56,6 +58,9 @@ public class SaleAdapter extends RecyclerView.Adapter<SaleAdapter.ViewHolder> {
         NumberFormat nf = NumberFormat.getNumberInstance();
         holder.minBidPrc.setText(nf.format(SysUtill.strToInt(item.getMIN_BID_PRC())) + " 원");
 
+        holder.uscbdCnt.setText(item.getUSCBD_CNT() + " 회");
+        holder.pbctCltrStatNm.setText(item.getPBCT_CLTR_STAT_NM());
+        holder.ctgrFullNm.setText(item.getCTGR_FULL_NM());
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -66,15 +71,22 @@ public class SaleAdapter extends RecyclerView.Adapter<SaleAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView title;
+        LabelTextView title; //물건이름, 처분방식(라벨)
         TextView pbctDtm; //입찰기간
         TextView minBidPrc; //최저입찰가
+        TextView uscbdCnt; // 유찰횟수
+        TextView pbctCltrStatNm; //물건상태
+        TextView ctgrFullNm; //용도명
+
 
         public ViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.tv_title);
+            title = (LabelTextView) itemView.findViewById(R.id.tv_title);
             pbctDtm = (TextView) itemView.findViewById(R.id.tv_pbct_dtm);
             minBidPrc = (TextView) itemView.findViewById(R.id.tv_min_bid_prc);
+            uscbdCnt = (TextView) itemView.findViewById(R.id.tv_uscbd_cnt);
+            pbctCltrStatNm = (TextView) itemView.findViewById(R.id.tv_dpsl_mtd_nm);
+            ctgrFullNm = (TextView) itemView.findViewById(R.id.tv_ctgr_full_nm);
         }
     }
 }

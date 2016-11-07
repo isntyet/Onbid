@@ -3,12 +3,16 @@ package com.ks.onbid.main;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -41,6 +45,9 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
 
     private RecyclerView rvSaleList;
+    private NestedScrollView nsMain;
+    private LinearLayoutManager layoutManager;
+    private CoordinatorLayout clMain;
 
     //처분방식 버튼
     private Button[] btnDPSL;
@@ -85,13 +92,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText etGoodNo;
     private EditText etGoodName;
 
+    //검색버튼
+    private Button btnSearch;
+    private InputMethodManager imm;
+
     //fab button
     private MaterialSheetFab materialSheetFab;
     private int statusBarColor;
 
     //fab menu
     private TextView btnSetup;
-    private TextView btnSearch;
+    private TextView btnResearch;
     private TextView btnCommunity;
     private TextView btnBoard;
 
@@ -141,8 +152,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSetup = (TextView) findViewById(R.id.btn_setup);
         btnSetup.setOnClickListener(this);
 
-        btnSearch = (TextView) findViewById(R.id.btn_search);
-        btnSearch.setOnClickListener(this);
+        btnResearch = (TextView) findViewById(R.id.btn_research);
+        btnResearch.setOnClickListener(this);
 
         btnCommunity = (TextView) findViewById(R.id.btn_community);
         btnCommunity.setOnClickListener(this);
@@ -168,15 +179,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //saleList.clear();
         saleList = onlistRequest();
         rvSaleList.removeAllViewsInLayout();
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        layoutManager = new LinearLayoutManager(getApplicationContext());
         rvSaleList.setHasFixedSize(true);
         rvSaleList.setLayoutManager(layoutManager);
         rvSaleList.setAdapter(new SaleAdapter(getApplicationContext(),saleList, R.layout.activity_main));
     }
 
     private void setInitUI(){
+        clMain = (CoordinatorLayout) findViewById(R.id.cl_main);
+        nsMain = (NestedScrollView) findViewById(R.id.ns_main);
         rvSaleList = (RecyclerView) findViewById(R.id.rv_sale_list);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        layoutManager = new LinearLayoutManager(getApplicationContext());
+        rvSaleList.setNestedScrollingEnabled(false);
         rvSaleList.setHasFixedSize(true);
         rvSaleList.setLayoutManager(layoutManager);
 
@@ -256,6 +270,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         etGoodNo = (EditText) findViewById(R.id.et_good_no);
         etGoodName = (EditText) findViewById(R.id.et_good_name);
+
+        //////////////////////////////////검색버튼 세팅
+        btnSearch = (Button) findViewById(R.id.btn_search);
+        btnSearch.setOnClickListener(this);
+
+        imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
     }
 
 
@@ -335,10 +355,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             dateToValue = "";
             DATE_FLAG = 2;
             loadCanlenderDialog();
+        } else if(v.getId() == btnSearch.getId()){
+            getSaleList();
+            imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         } else if(v.getId() == btnSetup.getId()){
             startActivity(new Intent(this, SetupActivity.class));
         } else if(v.getId() == btnCommunity.getId()){
             startActivity(new Intent(this, CommunityActivity.class));
+        } else if(v.getId() == btnResearch.getId()){
+
+            materialSheetFab.hideSheet();
+            //nsMain.fullScroll(View.FOCUS_BACKWARD);
+            nsMain.smoothScrollTo(0, 0);
         }
     }
 
@@ -521,5 +549,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // TODO Auto-generated method stub
+
+        //nsMain.smoothScrollTo(0, 0);
+        nsMain.fullScroll(View.FOCUS_UP);
+        return super.onPrepareOptionsMenu(menu);
     }
 }

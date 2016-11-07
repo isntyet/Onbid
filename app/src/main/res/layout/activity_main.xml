@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -491,6 +492,26 @@
                     </LinearLayout>
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="right|center_vertical"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/round_press_btn_unclick"
+                        android:text="검색"
+                        android:textColor="#ffffff"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
 
@@ -508,7 +529,7 @@
 
 
     <android.support.v4.widget.NestedScrollView
-        android:id="@+id/test"
+        android:id="@+id/ns_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -530,12 +551,12 @@
             android:id="@+id/btn_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fabSize="normal"
-            android:src="@drawable/ic_menu"
-            app:elevation="4dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_menu"
+            app:elevation="4dp"
+            app:fabSize="normal" />
 
         <com.gordonwong.materialsheetfab.DimOverlayFrameLayout
             android:id="@+id/overlay"
@@ -546,8 +567,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="end|bottom"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <!-- Sheet that contains your items -->
             <android.support.v7.widget.CardView
@@ -558,74 +578,71 @@
                 app:cardBackgroundColor="#ffffff"
                 app:cardElevation="0dp"
                 app:cardMaxElevation="4dp"
-                app:contentPadding="-3dp"
-                >
+                app:contentPadding="-3dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary">
+
+                        <TextView
+                            android:id="@+id/btn_research"
+                            android:layout_width="210dp"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:drawableLeft="@drawable/ic_search"
+                            android:drawablePadding="24dp"
+                            android:padding="16dp"
+                            android:text="검색 재설정(맨위로)"
+                            android:textColor="#ffffff"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
 
                     <TextView
-                        android:layout_width="210dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/btn_search"
-                        android:padding="16dp"
-                        android:textSize="16sp"
-                        android:textColor="#ffffff"
-                        android:drawablePadding="24dp"
-                        android:background="?attr/selectableItemBackground"
-                        android:clickable="true"
-                        android:drawableLeft="@drawable/ic_search"
-                        android:text="검색 재설정(맨위로)" />
-
-                </LinearLayout>
-
-                    <TextView
-                        android:layout_width="210dp"
-                        android:layout_height="wrap_content"
                         android:id="@+id/btn_community"
-                        android:padding="16dp"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:drawablePadding="24dp"
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"
                         android:clickable="true"
                         android:drawableLeft="@drawable/ic_community"
-                        android:text="커뮤니티 모음" />
+                        android:drawablePadding="24dp"
+                        android:padding="16dp"
+                        android:text="커뮤니티 모음"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/btn_board"
                         android:layout_width="210dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/btn_board"
-                        android:padding="16dp"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:drawablePadding="24dp"
                         android:background="?attr/selectableItemBackground"
                         android:clickable="true"
                         android:drawableLeft="@drawable/ic_board"
-                        android:text="자유게시판" />
+                        android:drawablePadding="24dp"
+                        android:padding="16dp"
+                        android:text="자유게시판"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/btn_setup"
                         android:layout_width="210dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/btn_setup"
-                        android:padding="16dp"
-                        android:textSize="16sp"
-                        android:textColor="#000000"
-                        android:drawablePadding="24dp"
                         android:background="?attr/selectableItemBackground"
                         android:clickable="true"
                         android:drawableLeft="@drawable/ic_setup"
-                        android:text="설정하기" />
-
+                        android:drawablePadding="24dp"
+                        android:padding="16dp"
+                        android:text="설정하기"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
 
 
                 </LinearLayout>
