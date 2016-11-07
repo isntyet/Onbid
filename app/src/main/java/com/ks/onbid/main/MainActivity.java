@@ -10,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.Menu;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -59,17 +58,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button[] btnUse;
 
     //용도 플래그
-    private String useValue_1 ="";
-    private String useValue_2 ="";
-    private String useValue_3 ="";
+    private String useValue_1 = "";
+    private String useValue_2 = "";
+    private String useValue_3 = "";
 
     //주소 버튼
     private Button[] btnAddr;
 
     //주소 버튼 플래그
-    private String addrValue_1 ="";
-    private String addrValue_2 ="";
-    private String addrValue_3 ="";
+    private String addrValue_1 = "";
+    private String addrValue_2 = "";
+    private String addrValue_3 = "";
 
     //입찰기간 버튼
     private Button btnDateFrom;
@@ -175,17 +174,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void getSaleList(){
+    private void getSaleList() {
         //saleList.clear();
         saleList = onlistRequest();
         rvSaleList.removeAllViewsInLayout();
         layoutManager = new LinearLayoutManager(getApplicationContext());
         rvSaleList.setHasFixedSize(true);
         rvSaleList.setLayoutManager(layoutManager);
-        rvSaleList.setAdapter(new SaleAdapter(getApplicationContext(),saleList, R.layout.activity_main));
+        rvSaleList.setAdapter(new SaleAdapter(getApplicationContext(), saleList, R.layout.activity_main));
     }
 
-    private void setInitUI(){
+    private void setInitUI() {
         clMain = (CoordinatorLayout) findViewById(R.id.cl_main);
         nsMain = (NestedScrollView) findViewById(R.id.ns_main);
         rvSaleList = (RecyclerView) findViewById(R.id.rv_sale_list);
@@ -201,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDPSL[1] = (Button) findViewById(R.id.btn_dpsl_2);
         btnDPSL[2] = (Button) findViewById(R.id.btn_dpsl_3);
 
-        for(int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             btnDPSL[i].setOnClickListener(this);
         }
         btnDPSL[0].setBackgroundResource(R.drawable.round_btn_click);
@@ -217,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnUse[1] = (Button) findViewById(R.id.btn_use_2);
         btnUse[2] = (Button) findViewById(R.id.btn_use_3);
 
-        for(int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             btnUse[i].setOnClickListener(this);
         }
 
@@ -232,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnAddr[1] = (Button) findViewById(R.id.btn_addr_2);
         btnAddr[2] = (Button) findViewById(R.id.btn_addr_3);
 
-        for(int i = 0; i < 3; i++){
+        for (int i = 0; i < 3; i++) {
             btnAddr[i].setOnClickListener(this);
         }
 
@@ -252,7 +251,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDateTo.setBackgroundResource(R.drawable.round_press_btn_click);
 
         Date date = SysUtill.getCurrentTime();
-        dateToValue =  new SimpleDateFormat("yyyyMMdd").format(date);
+        dateToValue = new SimpleDateFormat("yyyyMMdd").format(date);
         btnDateTo.setText(new SimpleDateFormat("yyyy-MM-dd").format(date));
 
 
@@ -275,47 +274,47 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSearch = (Button) findViewById(R.id.btn_search);
         btnSearch.setOnClickListener(this);
 
-        imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
+        imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
     }
 
 
     //용도 코드 1뎁스
-    private ArrayList<UseCode> onUseCodeTopRequest(){
+    private ArrayList<UseCode> onUseCodeTopRequest() {
         UseCodeTopRequest request = new UseCodeTopRequest(this);
         request.setParams();
         return request.startRequest();
     }
 
     //용도 코드 2뎁스
-    private ArrayList<UseCode> onUseCodeMiddleRequest(String topCdoe){
+    private ArrayList<UseCode> onUseCodeMiddleRequest(String topCdoe) {
         UseCodeMiddleRequest request = new UseCodeMiddleRequest(this);
         request.setParams(topCdoe);
         return request.startRequest();
     }
 
     //용도 코드 3뎁스
-    private ArrayList<UseCode> onUseCodeBottomRequest(String middleCode){
+    private ArrayList<UseCode> onUseCodeBottomRequest(String middleCode) {
         UseCodeBottomRequest request = new UseCodeBottomRequest(this);
         request.setParams(middleCode);
         return request.startRequest();
     }
 
     //주소 코드 1뎁스
-    private ArrayList<String> onAddrCodeFirstRequest(){
+    private ArrayList<String> onAddrCodeFirstRequest() {
         AddrCodeFirstRequest request = new AddrCodeFirstRequest(this);
         request.setParams();
         return request.startRequest();
     }
 
     //주소 코드 2뎁스
-    private ArrayList<String> onAddrCodeSecondRequest(String addr1){
+    private ArrayList<String> onAddrCodeSecondRequest(String addr1) {
         AddrCodeSecondRequest request = new AddrCodeSecondRequest(this);
         request.setParams(addr1);
         return request.startRequest();
     }
 
     //주소 코드 3뎁스
-    private ArrayList<String> onAddrCodeThirdRequest(String addr2){
+    private ArrayList<String> onAddrCodeThirdRequest(String addr2) {
         AddrCodeThirdRequest request = new AddrCodeThirdRequest(this);
         request.setParams(addr2);
         return request.startRequest();
@@ -323,46 +322,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if((v.getId() == btnDPSL[0].getId()) || (v.getId() == btnDPSL[1].getId()) || (v.getId() == btnDPSL[2].getId())){
+        if ((v.getId() == btnDPSL[0].getId()) || (v.getId() == btnDPSL[1].getId()) || (v.getId() == btnDPSL[2].getId())) {
             setDpslButton(v);
-        } else if(v.getId() == btnUse[0].getId()){
+        } else if (v.getId() == btnUse[0].getId()) {
             ArrayList<UseCode> list = onUseCodeTopRequest();
             loadUseDialog(list, btnUse[0]);
-        } else if((v.getId() == btnUse[1].getId()) && (!"".equals(useValue_1))){
+        } else if ((v.getId() == btnUse[1].getId()) && (!"".equals(useValue_1))) {
             ArrayList<UseCode> list = onUseCodeMiddleRequest(useValue_1);
             loadUseDialog(list, btnUse[1]);
-        } else if((v.getId() == btnUse[2].getId()) && (!"".equals(useValue_2))){
+        } else if ((v.getId() == btnUse[2].getId()) && (!"".equals(useValue_2))) {
             ArrayList<UseCode> list = onUseCodeBottomRequest(useValue_2);
             loadUseDialog(list, btnUse[2]);
-        } else if(v.getId() == btnAddr[0].getId()){
+        } else if (v.getId() == btnAddr[0].getId()) {
             ArrayList<String> list = onAddrCodeFirstRequest();
             loadAddrDialog(list, btnAddr[0]);
-        } else if((v.getId() == btnAddr[1].getId()) && (!"".equals(addrValue_1))){
+        } else if ((v.getId() == btnAddr[1].getId()) && (!"".equals(addrValue_1))) {
             ArrayList<String> list = onAddrCodeSecondRequest(addrValue_1);
             loadAddrDialog(list, btnAddr[1]);
-        } else if((v.getId() == btnAddr[2].getId()) && (!"".equals(addrValue_2))){
+        } else if ((v.getId() == btnAddr[2].getId()) && (!"".equals(addrValue_2))) {
             ArrayList<String> list = onAddrCodeThirdRequest(addrValue_2);
             loadAddrDialog(list, btnAddr[2]);
-        } else if((v.getId() == btnDateFrom.getId())){
+        } else if ((v.getId() == btnDateFrom.getId())) {
             btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_unclick);
             btnDateFrom.setText("-");
             dateFromValue = "";
             DATE_FLAG = 1;
             loadCanlenderDialog();
-        } else if((v.getId() == btnDateTo.getId())){
+        } else if ((v.getId() == btnDateTo.getId())) {
             btnDateTo.setBackgroundResource(R.drawable.round_press_btn_unclick);
             btnDateTo.setText("-");
             dateToValue = "";
             DATE_FLAG = 2;
             loadCanlenderDialog();
-        } else if(v.getId() == btnSearch.getId()){
+        } else if (v.getId() == btnSearch.getId()) {
             getSaleList();
             imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-        } else if(v.getId() == btnSetup.getId()){
+        } else if (v.getId() == btnSetup.getId()) {
             startActivity(new Intent(this, SetupActivity.class));
-        } else if(v.getId() == btnCommunity.getId()){
+        } else if (v.getId() == btnCommunity.getId()) {
             startActivity(new Intent(this, CommunityActivity.class));
-        } else if(v.getId() == btnResearch.getId()){
+        } else if (v.getId() == btnResearch.getId()) {
 
             materialSheetFab.hideSheet();
             //nsMain.fullScroll(View.FOCUS_BACKWARD);
@@ -370,7 +369,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void loadCanlenderDialog(){
+    private void loadCanlenderDialog() {
         Calendar now = Calendar.getInstance();
         DatePickerDialog dpd = DatePickerDialog.newInstance(
                 MainActivity.this,
@@ -381,9 +380,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dpd.show(getFragmentManager(), "Datepickerdialog");
     }
 
-    private void setDpslButton(View v){
-        for(int i = 0; i < 3; i++){
-            if(btnDPSL[i].getId() == v.getId()){
+    private void setDpslButton(View v) {
+        for (int i = 0; i < 3; i++) {
+            if (btnDPSL[i].getId() == v.getId()) {
                 btnDPSL[i].setBackgroundResource(R.drawable.round_btn_click);
                 DPSL_FLAG = i;
             } else {
@@ -392,7 +391,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private void loadUseDialog(final ArrayList<UseCode> list, final Button btn){
+    private void loadUseDialog(final ArrayList<UseCode> list, final Button btn) {
         UseDialogAdapter adapter = new UseDialogAdapter(this, list);
 
         DialogPlus dialog = DialogPlus.newDialog(this)
@@ -400,7 +399,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(DialogPlus dialog, Object item, View view, int position) {
-                        if("전체".equals(list.get(position).getCTGR_NM())){
+                        if ("전체".equals(list.get(position).getCTGR_NM())) {
                             btn.setBackgroundResource(R.drawable.round_press_btn_unclick);
                         } else {
                             btn.setBackgroundResource(R.drawable.round_press_btn_click);
@@ -408,7 +407,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         btn.setText(list.get(position).getCTGR_NM());
 
-                        if(btn.getId() == btnUse[0].getId()){
+                        if (btn.getId() == btnUse[0].getId()) {
                             btnUse[1].setBackgroundResource(R.drawable.round_press_btn_unclick);
                             btnUse[2].setBackgroundResource(R.drawable.round_press_btn_unclick);
                             btnUse[1].setText("전체");
@@ -416,12 +415,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             useValue_1 = list.get(position).getCTGR_ID();
                             useValue_2 = "";
                             useValue_3 = "";
-                        } else if(btn.getId() == btnUse[1].getId()){
+                        } else if (btn.getId() == btnUse[1].getId()) {
                             btnUse[2].setBackgroundResource(R.drawable.round_press_btn_unclick);
                             btnUse[2].setText("전체");
                             useValue_2 = list.get(position).getCTGR_ID();
                             useValue_3 = "";
-                        } else if(btn.getId() == btnUse[2].getId()){
+                        } else if (btn.getId() == btnUse[2].getId()) {
                             useValue_3 = list.get(position).getCTGR_ID();
                         }
                         Log.d("use_data_1", useValue_1);
@@ -437,7 +436,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         dialog.show();
     }
 
-    private void loadAddrDialog(final ArrayList<String> list, final Button btn){
+    private void loadAddrDialog(final ArrayList<String> list, final Button btn) {
         AddrDialogAdapter adapter = new AddrDialogAdapter(this, list);
 
         DialogPlus dialog = DialogPlus.newDialog(this)
@@ -445,7 +444,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(DialogPlus dialog, Object item, View view, int position) {
-                        if("전체".equals(list.get(position))){
+                        if ("전체".equals(list.get(position))) {
                             btn.setBackgroundResource(R.drawable.round_press_btn_unclick);
                         } else {
                             btn.setBackgroundResource(R.drawable.round_press_btn_click);
@@ -453,28 +452,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         btn.setText(list.get(position));
 
-                        if(btn.getId() == btnAddr[0].getId()){
+                        if (btn.getId() == btnAddr[0].getId()) {
                             btnAddr[1].setBackgroundResource(R.drawable.round_press_btn_unclick);
                             btnAddr[2].setBackgroundResource(R.drawable.round_press_btn_unclick);
                             btnAddr[1].setText("전체");
                             btnAddr[2].setText("전체");
                             addrValue_1 = list.get(position);
-                            if("전체".equals(list.get(position))){
+                            if ("전체".equals(list.get(position))) {
                                 addrValue_1 = "";
                             }
                             addrValue_2 = "";
                             addrValue_3 = "";
-                        } else if(btn.getId() == btnAddr[1].getId()){
+                        } else if (btn.getId() == btnAddr[1].getId()) {
                             btnAddr[2].setBackgroundResource(R.drawable.round_press_btn_unclick);
                             btnAddr[2].setText("전체");
                             addrValue_2 = list.get(position);
-                            if("전체".equals(list.get(position))){
+                            if ("전체".equals(list.get(position))) {
                                 addrValue_2 = "";
                             }
                             addrValue_3 = "";
-                        } else if(btn.getId() == btnAddr[2].getId()){
+                        } else if (btn.getId() == btnAddr[2].getId()) {
                             addrValue_3 = list.get(position);
-                            if("전체".equals(list.get(position))){
+                            if ("전체".equals(list.get(position))) {
                                 addrValue_3 = "";
                             }
                         }
@@ -503,11 +502,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String date = "" + year + strMonth + strDay;
 
-        if(DATE_FLAG == 1){
+        if (DATE_FLAG == 1) {
             btnDateFrom.setText(year + "-" + strMonth + "-" + strDay);
             btnDateFrom.setBackgroundResource(R.drawable.round_press_btn_click);
             dateFromValue = date;
-        } else if(DATE_FLAG == 2){
+        } else if (DATE_FLAG == 2) {
             btnDateTo.setText(year + "-" + strMonth + "-" + strDay);
             btnDateTo.setBackgroundResource(R.drawable.round_press_btn_click);
             dateToValue = date;
@@ -518,13 +517,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private ArrayList<SaleItem> onlistRequest(){
+    private ArrayList<SaleItem> onlistRequest() {
         SaleListApiRequest request = new SaleListApiRequest(this);
 
         String DPSLValue = "";
-        if(DPSL_FLAG == 1){
+        if (DPSL_FLAG == 1) {
             DPSLValue = "0001";
-        } if(DPSL_FLAG == 2){
+        }
+        if (DPSL_FLAG == 2) {
             DPSLValue = "0002";
         }
 
@@ -549,14 +549,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        // TODO Auto-generated method stub
-
-        //nsMain.smoothScrollTo(0, 0);
-        nsMain.fullScroll(View.FOCUS_UP);
-        return super.onPrepareOptionsMenu(menu);
     }
 }
