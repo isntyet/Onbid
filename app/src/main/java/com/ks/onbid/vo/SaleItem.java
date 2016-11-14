@@ -1,9 +1,12 @@
 package com.ks.onbid.vo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by jo on 2016-10-25.
  */
-public class SaleItem {
+public class SaleItem implements Parcelable{
 
     //리스트 번호
     private String RNUM;
@@ -49,6 +52,75 @@ public class SaleItem {
     private String IQRY_CNT;
     //물건상세정보
     private String GOODS_NM;
+
+    public SaleItem() {
+
+    }
+
+    private SaleItem(Parcel in) {
+        this.RNUM = in.readString();
+        this.PLNM_NO = in.readString();
+        this.PBCT_NO = in.readString();
+        this.CLTR_NO = in.readString();
+        this.CTGR_FULL_NM = in.readString();
+        this.BID_MNMT_NO = in.readString();
+        this.CLTR_NM = in.readString();
+        this.CLTR_MNMT_NO = in.readString();
+        this.LDNM_ADRS = in.readString();
+        this.NMRD_ADRS = in.readString();
+        this.DPSL_MTD_CD = in.readString();
+        this.DPSL_MTD_NM = in.readString();
+        this.BID_MTD_NM = in.readString();
+        this.MIN_BID_PRC = in.readString();
+        this.APSL_ASES_AVG_AMT = in.readString();
+        this.FEE_RATE = in.readString();
+        this.PBCT_BEGN_DTM = in.readString();
+        this.PBCT_CLS_DTM = in.readString();
+        this.PBCT_CLTR_STAT_NM = in.readString();
+        this.USCBD_CNT = in.readString();
+        this.IQRY_CNT = in.readString();
+        this.GOODS_NM = in.readString();
+    }
+
+    public static final Parcelable.Creator<SaleItem> CREATOR = new Parcelable.Creator<SaleItem>() {
+        public SaleItem createFromParcel(Parcel in) {
+            return new SaleItem(in);
+        }
+        public SaleItem[] newArray (int size) {
+            return new SaleItem[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.RNUM);
+        dest.writeString(this.PLNM_NO);
+        dest.writeString(this.PBCT_NO);
+        dest.writeString(this.CLTR_NO);
+        dest.writeString(this.CTGR_FULL_NM);
+        dest.writeString(this.BID_MNMT_NO);
+        dest.writeString(this.CLTR_NM);
+        dest.writeString(this.CLTR_MNMT_NO);
+        dest.writeString(this.LDNM_ADRS);
+        dest.writeString(this.NMRD_ADRS);
+        dest.writeString(this.DPSL_MTD_CD);
+        dest.writeString(this.DPSL_MTD_NM);
+        dest.writeString(this.BID_MTD_NM);
+        dest.writeString(this.MIN_BID_PRC);
+        dest.writeString(this.APSL_ASES_AVG_AMT);
+        dest.writeString(this.FEE_RATE);
+        dest.writeString(this.PBCT_BEGN_DTM);
+        dest.writeString(this.PBCT_CLS_DTM);
+        dest.writeString(this.PBCT_CLTR_STAT_NM);
+        dest.writeString(this.USCBD_CNT);
+        dest.writeString(this.IQRY_CNT);
+        dest.writeString(this.GOODS_NM);
+    }
 
     public String getRNUM() {
         return RNUM;

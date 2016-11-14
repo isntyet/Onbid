@@ -2,12 +2,15 @@ package com.ks.onbid.main;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ks.onbid.R;
 import com.ks.onbid.utill.SysUtill;
@@ -47,10 +50,10 @@ public class SaleAdapter extends RecyclerView.Adapter<SaleAdapter.ViewHolder> {
         holder.title.setLabelText(item.getDPSL_MTD_NM());
 
         Date begn_dtm = SysUtill.strToDttm(item.getPBCT_BEGN_DTM());
-        String str_begn_dtm =  new SimpleDateFormat("yyyy-MM-dd HH:mm").format(begn_dtm);
+        String str_begn_dtm = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(begn_dtm);
 
         Date cls_dtm = SysUtill.strToDttm(item.getPBCT_CLS_DTM());
-        String str_cls_dtm =  new SimpleDateFormat("yyyy-MM-dd HH:mm").format(cls_dtm);
+        String str_cls_dtm = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(cls_dtm);
 
         holder.pbctDtm.setText(str_begn_dtm + " ~ " + str_cls_dtm);
         //holder.minBidPrc.setText(item.getMIN_BID_PRC());
@@ -61,6 +64,22 @@ public class SaleAdapter extends RecyclerView.Adapter<SaleAdapter.ViewHolder> {
         holder.uscbdCnt.setText(item.getUSCBD_CNT() + " 회");
         holder.pbctCltrStatNm.setText(item.getPBCT_CLTR_STAT_NM());
         holder.ctgrFullNm.setText(item.getCTGR_FULL_NM());
+
+        holder.layoutItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, item.getCLTR_NM(), Toast.LENGTH_SHORT).show();
+
+                Intent it = new Intent(context, SaleDetailActivity.class);
+                it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                it.putExtra("sale_item", item);
+
+                context.startActivity(it);
+
+            }
+        });
+
+
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
@@ -71,6 +90,7 @@ public class SaleAdapter extends RecyclerView.Adapter<SaleAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        CardView layoutItem; //item 전체
         LabelTextView title; //물건이름, 처분방식(라벨)
         TextView pbctDtm; //입찰기간
         TextView minBidPrc; //최저입찰가
@@ -81,6 +101,7 @@ public class SaleAdapter extends RecyclerView.Adapter<SaleAdapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
+            layoutItem = (CardView) itemView.findViewById(R.id.cv_item);
             title = (LabelTextView) itemView.findViewById(R.id.tv_title);
             pbctDtm = (TextView) itemView.findViewById(R.id.tv_pbct_dtm);
             minBidPrc = (TextView) itemView.findViewById(R.id.tv_min_bid_prc);

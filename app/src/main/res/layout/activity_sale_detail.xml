@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/AppTheme.AppBarOverlay"
+        app:title="공매물건 상세보기"
+        app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="물건명"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="title"
+                    android:textColor="#000000"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="기본정보"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="물건상태"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_pbct_cltr_stat_nm"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="입찰기간"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="최저입찰가"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_min_bid_prc"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="물건관리번호"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_cltr_mnmt_no"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#22FFCCFF"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="물건용도"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_ctgr_full_nm"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="소재지(지번)"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_ldnm_adrs"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="소재지(도로명)"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_nmrd_adrs"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:text="상세정보"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    android:id="@+id/tv_goods_nm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="3dp"
+                    android:text="상세내용"
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="공고번호"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_plnm_no"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="공매번호"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_pbct_no"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="물건번호"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_cltr_no"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="입찰번호"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_bid_mnmt_no"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="처분방식명"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_dpsl_mtd_nm"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="입찰방식"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_bid_mtd_nm"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="감정가"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_apsl_ases_avg_amt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="최저입찰가율"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_fee_rate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="유찰횟수"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_uscbd_cnt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#cccccc"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#22FFCCFF"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:background="#00000000"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="조회수"
+                            android:textColor="#333333"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="1dp"
+                            android:layout_marginTop="1dp"
+                            android:background="#cccccc"></View>
+
+                        <TextView
+                            android:id="@+id/tv_iqry_cnt"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="#ffffff"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="5dp"
+                            android:paddingTop="3dp"
+                            android:text="title"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

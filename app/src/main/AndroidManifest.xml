@@ -20,6 +20,12 @@
         </activity>
 
         <activity
+            android:name=".main.SaleDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing">
+        </activity>
+
+        <activity
             android:name=".setup.SetupActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden">
