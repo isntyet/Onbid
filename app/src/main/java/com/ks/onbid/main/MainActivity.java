@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.gordonwong.materialsheetfab.MaterialSheetFab;
 import com.gordonwong.materialsheetfab.MaterialSheetFabEventListener;
 import com.ks.onbid.R;
+import com.ks.onbid.chat.ChatActivity;
 import com.ks.onbid.community.CommunityActivity;
 import com.ks.onbid.request.AddrCodeFirstRequest;
 import com.ks.onbid.request.AddrCodeSecondRequest;
@@ -104,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView btnResearch;
     private TextView btnCommunity;
     private TextView btnBoard;
+    private TextView btnChat;
 
 
     private ArrayList<SaleItem> saleList;
@@ -159,6 +161,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnBoard = (TextView) findViewById(R.id.btn_board);
         btnBoard.setOnClickListener(this);
+
+        btnChat = (TextView) findViewById(R.id.btn_chat);
+        btnChat.setOnClickListener(this);
     }
 
     private int getStatusBarColor() {
@@ -361,6 +366,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(this, SetupActivity.class));
         } else if (v.getId() == btnCommunity.getId()) {
             startActivity(new Intent(this, CommunityActivity.class));
+        } else if(v.getId() == btnChat.getId()){
+            startActivity(new Intent(this, ChatActivity.class));
         } else if (v.getId() == btnResearch.getId()) {
 
             materialSheetFab.hideSheet();

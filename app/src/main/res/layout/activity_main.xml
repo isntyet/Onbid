@@ -619,6 +619,19 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/btn_chat"
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:drawableLeft="@drawable/ic_chat"
+                        android:drawablePadding="24dp"
+                        android:padding="16dp"
+                        android:text="정보공유 톡방"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <TextView
                         android:id="@+id/btn_board"
                         android:layout_width="210dp"
                         android:layout_height="wrap_content"
