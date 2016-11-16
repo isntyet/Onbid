@@ -3,6 +3,7 @@ package com.ks.onbid.utill;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 /**
@@ -90,11 +91,25 @@ public class SysUtill {
         }
     }
 
-    public static Date getCurrentTime(){
+    public static Date getCurrentTime() {
         Calendar cd = Calendar.getInstance();
         Date date = cd.getTime();
 
         return date;
+    }
+
+    public static String getCurrentToday() {
+        String year = intToStr(new GregorianCalendar().get(GregorianCalendar.YEAR));
+        String month = intToStr(new GregorianCalendar().get(GregorianCalendar.MONTH) + 1);
+        if (month.length() < 2) {
+            month = "0" + month;
+        }
+        String day = intToStr(new GregorianCalendar().get(GregorianCalendar.DAY_OF_MONTH));
+        if (day.length() < 2) {
+            day = "0" + day;
+        }
+
+        return year + month + day;
     }
 
     public static Date strToDttm(String dttm) {

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "518266301277",
+    "firebase_url": "https://onbid-f45e4.firebaseio.com",
+    "project_id": "onbid-f45e4",
+    "storage_bucket": "onbid-f45e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518266301277:android:cea2ac8fea412e2f",
+        "android_client_info": {
+          "package_name": "com.ks.onbid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518266301277-c6fbh5lu8c3gg9sbrro5ap2jf7j8ae70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGlCOOW1cJqLx4cRnvwtNYx3rLjNCEHWE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
