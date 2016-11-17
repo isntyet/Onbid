@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private NestedScrollView nsMain;
     private LinearLayoutManager layoutManager;
     private CoordinatorLayout clMain;
+    private BackPressCloseHandler backPressCloseHandler;
 
     //처분방식 버튼
     private Button[] btnDPSL;
@@ -114,6 +116,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        backPressCloseHandler = new BackPressCloseHandler(this);
 
         setInitUI();
 
@@ -549,12 +553,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return request.startRequest();
     }
 
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && materialSheetFab.isSheetVisible()) {
+            materialSheetFab.hideSheet();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
     @Override
     public void onBackPressed() {
-        if (materialSheetFab.isSheetVisible()) {
-            materialSheetFab.hideSheet();
-        } else {
-            super.onBackPressed();
-        }
+        backPressCloseHandler.onBackPressed();
     }
 }

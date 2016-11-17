@@ -554,6 +554,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
             android:src="@drawable/ic_menu"
             app:elevation="4dp"
             app:fabSize="normal" />
