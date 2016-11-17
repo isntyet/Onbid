@@ -2,8 +2,10 @@ package com.ks.onbid.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 
 import com.kakao.auth.ErrorCode;
 import com.kakao.network.ErrorResult;
@@ -46,7 +48,7 @@ public class KakaoSignupActivity extends AppCompatActivity {
 
             @Override
             public void onSessionClosed(ErrorResult errorResult) {
-                Log.d("TAG", "Session Closed");
+                Log.d("TAG", "Session Closed" + errorResult);
                 redirectLoginActivity();
             }
 
@@ -86,5 +88,4 @@ public class KakaoSignupActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
 }

@@ -3,6 +3,7 @@ package com.ks.onbid.setup;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -71,9 +72,6 @@ public class SetupActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
 
-        Date date = getCurrentTime();
-        String cDate = new SimpleDateFormat("yyyyMMddHHmmss").format(date);
-
         commentList = new ArrayList<Comment>();
 
         rvMyCommentsList = (RecyclerView) findViewById(R.id.mycomments_list_rv);
@@ -81,7 +79,6 @@ public class SetupActivity extends AppCompatActivity {
         rvMyCommentsList.setHasFixedSize(true);
         rvMyCommentsList.setLayoutManager(layoutManager);
         rvMyCommentsList.setAdapter(new CommentAdapter(getApplicationContext(), commentList, R.layout.activity_setup));
-
 
         sp = new Preferences(this);
 
@@ -132,7 +129,6 @@ public class SetupActivity extends AppCompatActivity {
         super.onResume();
     }
 
-
     private void loadMyComments() {
         databaseReference = firebaseDatabase.getReference().child("sale_comment");
         Query searchQuery = databaseReference.orderByChild("userId").equalTo(sp.getKakaoId());
@@ -181,6 +177,7 @@ public class SetupActivity extends AppCompatActivity {
                                     @Override
                                     public void onSessionClosed(ErrorResult errorResult) {
                                         redirectLoginActivity();
+                                        Log.i("TAG", "SessionClosed for Disconnect");
                                     }
 
                                     @Override
@@ -190,10 +187,12 @@ public class SetupActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onSuccess(Long userId) {
-                                        redirectLoginActivity();
+                                        killprocess();
+                                        Log.i("TAG", "Success for Disconnect");
                                     }
                                 });
                                 dialog.dismiss();
+
                             }
                         })
                 .setNegativeButton(getString(R.string.com_kakao_cancel_button),
@@ -204,6 +203,14 @@ public class SetupActivity extends AppCompatActivity {
                             }
                         }).show();
 
+
+    }
+
+    protected void killprocess() {
+        ActivityCompat.finishAffinity(this);
+        System.runFinalization();
+        System.exit(0);
+        finish();
     }
 
     protected void redirectLoginActivity() {
