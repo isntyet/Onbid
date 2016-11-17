@@ -64,7 +64,7 @@ public class KakaoSignupActivity extends AppCompatActivity {
                 userId = String.valueOf(userProfile.getId());
                 userNickname = userProfile.getNickname();
                 Logger.d("UserProfile : " + userProfile.toString());
-
+                sp.setKakaoProfileUrl(profileUrl);
                 sp.setKakaoId(userId);
                 sp.setKakaoNickname(userNickname);
                 sp.setKakaoThumbUrl(thumbProfile);
@@ -76,10 +76,6 @@ public class KakaoSignupActivity extends AppCompatActivity {
 
     private void redirectMainActivity() {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("user_Id", userId);
-        intent.putExtra("user_Nickname", userNickname);
-        intent.putExtra("thumb_Path", thumbProfile);
-
         startActivity(intent);
         finish();
     }
