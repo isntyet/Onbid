@@ -2,26 +2,28 @@ package com.ks.onbid.community;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
-import com.freesoulapps.preview.android.Preview;
 import com.ks.onbid.R;
 import com.ks.onbid.login.GlobalApplication;
 import com.ks.onbid.vo.CommunityItem;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by jo on 2016-11-17.
  */
 
 
-public class CommunityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements Preview.PreviewListener{
+public class CommunityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
     ArrayList<CommunityItem> items;
     int item_layout;
@@ -48,6 +50,11 @@ public class CommunityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
         final CommunityItem item = items.get(position);
 
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(255), rnd.nextInt(255), rnd.nextInt(255));
+
+        ((ViewHolder) holder).cardview.setCardBackgroundColor(color);
+
         ((ViewHolder) holder).cardview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,8 +66,9 @@ public class CommunityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             }
         });
 
-        ((ViewHolder) holder).preview.setData(item.getUrl());
-        ((ViewHolder) holder).preview.setListener(this);
+        ((ViewHolder) holder).name.setText(item.getName());
+        ((ViewHolder) holder).url.setText(item.getUrl());
+
     }
 
 
@@ -71,19 +79,16 @@ public class CommunityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        Preview preview;
         CardView cardview;
+        TextView name;
+        TextView url;
 
         public ViewHolder(View itemView) {
             super(itemView);
             cardview = (CardView) itemView.findViewById(R.id.cardview);
-            preview = (Preview) itemView.findViewById(R.id.preview);
+            name = (TextView) itemView.findViewById(R.id.tv_name);
+            url = (TextView) itemView.findViewById(R.id.tv_url);
 
         }
-    }
-
-    @Override
-    public void onDataReady(Preview preview) {
-        preview.setMessage(preview.getLink());
     }
 }

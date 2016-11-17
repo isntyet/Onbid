@@ -49,7 +49,6 @@ public class CommunityActivity extends AppCompatActivity {
         communityList.add(new CommunityItem("경매/공매를 알면 돈이보인다","http://m.cafe.naver.com/psyrich"));
         communityList.add(new CommunityItem("부자마을 이야기","http://m.cafe.naver.com/richvillagestory"));
         communityList.add(new CommunityItem("행복 재태크","http://m.cafe.daum.net/happy-tech/QdvU/855?q=%B0%F8%B8%C5"));
-
         communityList.add(new CommunityItem("천안 경/공매 정보 카페","http://m.cafe.naver.com/5692533"));
         communityList.add(new CommunityItem("중앙 옥션","http://m.cafe.naver.com/mbcdramafallinlove2"));
         communityList.add(new CommunityItem("랜드프로 - 경매투자강좌","http://www.landpro.co.kr"));
