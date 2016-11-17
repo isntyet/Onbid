@@ -192,7 +192,7 @@ public class SaleDetailActivity extends AppCompatActivity implements View.OnClic
                     Date date = getCurrentTime();
                     String cDate = new SimpleDateFormat("yyyyMMddHHmmss").format(date);
 
-                    Comment item = new Comment(saleItem.getPLNM_NO(), preferences.getKakaoNickname(), preferences.getKakaoThumbUrl(), preferences.getKakaoId(), etContent.getText().toString(), cDate);
+                    Comment item = new Comment(saleItem.getPLNM_NO(), saleItem.getCLTR_MNMT_NO(), preferences.getKakaoNickname(), preferences.getKakaoThumbUrl(), preferences.getKakaoId(), etContent.getText().toString(), cDate);
                     databaseReference = firebaseDatabase.getReference();
                     databaseReference.child("sale_comment").push().setValue(item);
 

@@ -11,6 +11,9 @@ public class Comment {
     //상위 게시물(물건 목록)의 공고번호
     private String plnmNo;
 
+    //상위 게시물(물건 목록)의 공고번호
+    private String cltrMnmtNo;
+
     //카카오 닉네임
     private String userName;
 
@@ -30,8 +33,9 @@ public class Comment {
 
     }
 
-    public Comment(String plnmNo, String userName, String userThumnail, String userId, String content, String regDate) {
+    public Comment(String plnmNo, String cltrMnmtNo, String userName, String userThumnail, String userId, String content, String regDate) {
         this.plnmNo = plnmNo;
+        this.cltrMnmtNo = cltrMnmtNo;
         this.userName = userName;
         this.userThumnail = userThumnail;
         this.userId = userId;
@@ -53,6 +57,14 @@ public class Comment {
 
     public void setPlnmNo(String plnmNo) {
         this.plnmNo = plnmNo;
+    }
+
+    public String getCltrMnmtNo() {
+        return cltrMnmtNo;
+    }
+
+    public void setCltrMnmtNo(String cltrMnmtNo) {
+        this.cltrMnmtNo = cltrMnmtNo;
     }
 
     public String getUserName() {
