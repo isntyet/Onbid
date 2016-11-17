@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_history"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="10dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:contentPadding="10dp"
+    card_view:cardPreventCornerOverlap="false"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/reply_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="댓글"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_history"
+            android:text="new"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/refresh_history"
+            android:text="refresh"
+            android:layout_toRightOf="@+id/reply_history"
+            android:layout_toEndOf="@+id/reply_history" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/id_history_tv"
+            android:text="My Nickname"/>
+        <TextView
+            android:layout_below="@+id/id_history_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/title_history_tv"
+            android:text="This is Title"/>
+        <TextView
+            android:layout_below="@+id/title_history_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/context_history_tv"
+            android:text="This is Context"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="답글"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+</LinearLayout>
+</android.support.v7.widget.CardView>

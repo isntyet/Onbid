@@ -90,6 +90,14 @@ public class Preferences {
         this.putString("KAKAO_NICKNAME", value);
     }
 
+    public String getKakaoProfileUrl() {
+        return this.getString("KAKAO_PROFILE_URL", "");
+    }
+
+    public void setKakaoProfileUrl(String value) {
+        this.putString("KAKAO_PROFILE_URL", value);
+    }
+
     public String getKakaoThumbUrl() {
         return this.getString("KAKAO_THUMB_URL", "");
     }

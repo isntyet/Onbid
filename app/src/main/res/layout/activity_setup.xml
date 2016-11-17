@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.android.volley.toolbox.NetworkImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/userProfile"
+                android:src="@mipmap/ic_launcher"
+                android:minHeight="100dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bogon"
+                android:textSize="25sp"
+                android:id="@+id/userNickName"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:layout_alignBottom="@+id/userProfile"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/kakaologout_tv"
+            android:text="Logout"
+            android:textSize="20dp"
+            android:onClick="onClick"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mycomments_tv"
+            android:text="내 댓글 보기"
+            android:textSize="20dp"
+            android:onClick="onClick"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mycomments_list_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        />
 
 </LinearLayout>
