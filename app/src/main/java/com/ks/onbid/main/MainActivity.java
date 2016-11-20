@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView btnSetup;
     private TextView btnResearch;
     private TextView btnCommunity;
-    private TextView btnBoard;
     private TextView btnChat;
 
 
@@ -162,9 +161,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnCommunity = (TextView) findViewById(R.id.btn_community);
         btnCommunity.setOnClickListener(this);
-
-        btnBoard = (TextView) findViewById(R.id.btn_board);
-        btnBoard.setOnClickListener(this);
 
         btnChat = (TextView) findViewById(R.id.btn_chat);
         btnChat.setOnClickListener(this);
