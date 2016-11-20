@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.ks.onbid.R;
+import com.ks.onbid.request.SaleListApiRequest;
 import com.ks.onbid.utill.Preferences;
 import com.ks.onbid.utill.SysUtill;
 import com.ks.onbid.vo.Comment;
@@ -41,7 +42,7 @@ import static com.ks.onbid.utill.SysUtill.getCurrentTime;
 public class SaleDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
-    private SaleItem saleItem;
+    private SaleItem saleItem = null;
 
     private TextView tvTitle;
 
@@ -98,6 +99,13 @@ public class SaleDetailActivity extends AppCompatActivity implements View.OnClic
         rvCommentList.setLayoutManager(layoutManager);
 
         saleItem = (SaleItem) getIntent().getParcelableExtra("sale_item");
+
+        if(saleItem == null){
+            String ext_cltrMnmtNo = getIntent().getStringExtra("cltr_mnmt_no");
+            String ext_category = getIntent().getStringExtra("category");
+
+            saleItem = onDetailRequest(ext_cltrMnmtNo, ext_category);
+        }
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
@@ -192,7 +200,7 @@ public class SaleDetailActivity extends AppCompatActivity implements View.OnClic
                     Date date = getCurrentTime();
                     String cDate = new SimpleDateFormat("yyyyMMddHHmmss").format(date);
 
-                    Comment item = new Comment(saleItem.getPLNM_NO(), saleItem.getCLTR_MNMT_NO(), preferences.getKakaoNickname(), preferences.getKakaoThumbUrl(), preferences.getKakaoId(), etContent.getText().toString(), cDate);
+                    Comment item = new Comment(saleItem.getPBCT_NO()+saleItem.getPLNM_NO(), saleItem.getCLTR_MNMT_NO(), preferences.getKakaoNickname(), preferences.getKakaoThumbUrl(), preferences.getKakaoId(), etContent.getText().toString(), cDate);
                     databaseReference = firebaseDatabase.getReference();
                     databaseReference.child("sale_comment").push().setValue(item);
 
@@ -220,7 +228,8 @@ public class SaleDetailActivity extends AppCompatActivity implements View.OnClic
     private void onCommentRequest() {
 
         databaseReference = firebaseDatabase.getReference().child("sale_comment");
-        Query searchQuery = databaseReference.orderByChild("plnmNo").equalTo(saleItem.getPLNM_NO());
+        Query searchQuery = databaseReference.orderByChild("category").equalTo(saleItem.getPBCT_NO()+saleItem.getPLNM_NO());
+        //searchQuery = searchQuery.orderByChild("plnmNo").equalTo(saleItem.getPLNM_NO());
 
         searchQuery.addListenerForSingleValueEvent(new ValueEventListener() {
 
@@ -262,5 +271,30 @@ public class SaleDetailActivity extends AppCompatActivity implements View.OnClic
         if (v.getId() == btnComment.getId()) {
             loadCommentDialog();
         }
+    }
+
+    private SaleItem onDetailRequest(String cltrMnmtNo, String category) {
+        ArrayList<SaleItem> items;
+        SaleItem item;
+
+        items = new ArrayList<SaleItem>();
+        item = new SaleItem();
+
+        SaleListApiRequest request = new SaleListApiRequest(this);
+
+        request.setParams("", "", "", "", "", "", "", "", "", "", "", "", "", cltrMnmtNo, "1");
+
+        items = request.startRequest();
+
+        if(items.size() != 0){
+            for (int i = 0; i < items.size(); i++){
+                if(category.equals(items.get(i).getPBCT_NO()+items.get(i).getPLNM_NO())){
+                    item = items.get(i);
+                    break;
+                }
+            }
+        }
+
+        return item;
     }
 }

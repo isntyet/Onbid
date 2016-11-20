@@ -8,10 +8,10 @@ public class Comment {
     //댓글 고유 키
     private String key;
 
-    //상위 게시물(물건 목록)의 공고번호
-    private String plnmNo;
+    //상위 게시물(물건 목록)의 공매번호 + 공고번호
+    private String category;
 
-    //상위 게시물(물건 목록)의 공고번호
+    //물건관리번호
     private String cltrMnmtNo;
 
     //카카오 닉네임
@@ -33,8 +33,8 @@ public class Comment {
 
     }
 
-    public Comment(String plnmNo, String cltrMnmtNo, String userName, String userThumnail, String userId, String content, String regDate) {
-        this.plnmNo = plnmNo;
+    public Comment(String category, String cltrMnmtNo, String userName, String userThumnail, String userId, String content, String regDate) {
+        this.category = category;
         this.cltrMnmtNo = cltrMnmtNo;
         this.userName = userName;
         this.userThumnail = userThumnail;
@@ -51,12 +51,12 @@ public class Comment {
         this.key = key;
     }
 
-    public String getPlnmNo() {
-        return plnmNo;
+    public String getCategory() {
+        return category;
     }
 
-    public void setPlnmNo(String plnmNo) {
-        this.plnmNo = plnmNo;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getCltrMnmtNo() {

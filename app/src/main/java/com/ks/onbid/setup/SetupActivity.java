@@ -10,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -28,16 +27,11 @@ import com.kakao.util.helper.log.Logger;
 import com.ks.onbid.R;
 import com.ks.onbid.login.KakaoLoginActivity;
 import com.ks.onbid.login.KakaoSignupActivity;
-import com.ks.onbid.main.CommentAdapter;
 import com.ks.onbid.utill.Preferences;
 import com.ks.onbid.vo.Comment;
 import com.ks.onbid.vo.SaleItem;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-
-import static com.ks.onbid.utill.SysUtill.getCurrentTime;
 
 /**
  * Created by jo on 2016-11-05.
@@ -64,6 +58,7 @@ public class SetupActivity extends AppCompatActivity {
 
 
     String userNickname;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,7 +73,7 @@ public class SetupActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(getApplicationContext());
         rvMyCommentsList.setHasFixedSize(true);
         rvMyCommentsList.setLayoutManager(layoutManager);
-        rvMyCommentsList.setAdapter(new CommentAdapter(getApplicationContext(), commentList, R.layout.activity_setup));
+        rvMyCommentsList.setAdapter(new MyCommentAdapter(getApplicationContext(), commentList, R.layout.activity_setup));
 
         sp = new Preferences(this);
 
@@ -149,7 +144,7 @@ public class SetupActivity extends AppCompatActivity {
                     //Log.i("List 개수", String.valueOf(commentList.size()));
 
                 }
-                rvMyCommentsList.setAdapter(new CommentAdapter(getApplicationContext(), commentList, R.layout.activity_setup));
+                rvMyCommentsList.setAdapter(new MyCommentAdapter(getApplicationContext(), commentList, R.layout.activity_setup));
             }
 
 
@@ -226,5 +221,6 @@ public class SetupActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 
 }

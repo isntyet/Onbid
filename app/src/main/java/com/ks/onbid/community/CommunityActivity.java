@@ -45,7 +45,7 @@ public class CommunityActivity extends AppCompatActivity {
         communityList.add(new CommunityItem("온비드","http://m.onbid.co.kr/mbw/mobileWebMain.do"));
         communityList.add(new CommunityItem("캠코-한국자산관리공사","http://m.kamco.or.kr/"));
         communityList.add(new CommunityItem("네이버 부동산 경매","http://land.naver.com/auction/"));
-        communityList.add(new CommunityItem("경매연구소 사랑","http://cafe.naver.com/dgkmresearch"));
+        communityList.add(new CommunityItem("경매연구소 사랑","http://m.cafe.naver.com/dgkmresearch"));
         communityList.add(new CommunityItem("경매/공매를 알면 돈이보인다","http://m.cafe.naver.com/psyrich"));
         communityList.add(new CommunityItem("부자마을 이야기","http://m.cafe.naver.com/richvillagestory"));
         communityList.add(new CommunityItem("행복 재태크","http://m.cafe.daum.net/happy-tech/QdvU/855?q=%B0%F8%B8%C5"));
