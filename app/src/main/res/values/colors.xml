@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#A85DFF</color>
+    <color name="colorPrimary">#03a9f4</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#0863dd</color>
 
-    <color name="buttonColor">#5FD5EC</color>
+    <color name="buttonColor">#00498c</color>
     <color name="menu_btn_sheet_bg">#FFFFFF</color>
 </resources>
