@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
+        "outputFile": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v21\\values-v21.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 150
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.gordonwong\\material-sheet-fab\\1.2.1\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.gordonwong\\material-sheet-fab\\1.2.1\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 241
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 344
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 447
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 552
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -106,7 +106,7 @@
                     "endOffset": 659
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -125,7 +125,7 @@
                     "endOffset": 768
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
                     "endOffset": 877
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -163,7 +163,7 @@
                     "endOffset": 986
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -182,7 +182,7 @@
                     "endOffset": 1095
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -201,7 +201,7 @@
                     "endOffset": 1204
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -220,7 +220,7 @@
                     "endOffset": 1311
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -239,7 +239,7 @@
                     "endOffset": 1414
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -258,7 +258,7 @@
                     "endOffset": 1533
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -278,7 +278,7 @@
                     "endOffset": 1688
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -299,7 +299,7 @@
                     "endOffset": 1843
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -319,7 +319,7 @@
                     "endOffset": 1948
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -338,7 +338,7 @@
                     "endOffset": 2069
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -357,7 +357,7 @@
                     "endOffset": 2170
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -377,7 +377,7 @@
                     "endOffset": 2317
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -398,7 +398,7 @@
                     "endOffset": 2458
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
@@ -418,7 +418,7 @@
                     "endOffset": 2561
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
@@ -437,7 +437,7 @@
                     "endOffset": 2680
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -456,7 +456,7 @@
                     "endOffset": 2787
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -475,7 +475,7 @@
                     "endOffset": 2890
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -495,7 +495,7 @@
                     "endOffset": 3045
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
@@ -516,7 +516,7 @@
                     "endOffset": 3216
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -537,7 +537,7 @@
                     "endOffset": 3365
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 34,
                         "startColumn": 4,
@@ -558,7 +558,7 @@
                     "endOffset": 3530
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 36,
                         "startColumn": 4,
@@ -579,7 +579,7 @@
                     "endOffset": 3687
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 38,
                         "startColumn": 4,
@@ -600,7 +600,7 @@
                     "endOffset": 3838
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 40,
                         "startColumn": 4,
@@ -620,7 +620,7 @@
                     "endOffset": 3957
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 42,
                         "startColumn": 4,
@@ -640,7 +640,7 @@
                     "endOffset": 4106
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 43,
                         "startColumn": 4,
@@ -661,7 +661,7 @@
                     "endOffset": 4255
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 45,
                         "startColumn": 4,
@@ -681,7 +681,7 @@
                     "endOffset": 4367
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 47,
                         "startColumn": 4,
@@ -700,7 +700,7 @@
                     "endOffset": 4514
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 48,
                         "startColumn": 4,
@@ -720,7 +720,7 @@
                     "endOffset": 4667
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 49,
                         "startColumn": 4,
@@ -741,7 +741,7 @@
                     "endOffset": 4814
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 51,
                         "startColumn": 4,
@@ -761,7 +761,7 @@
                     "endOffset": 4889
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 53,
                         "startColumn": 4,
@@ -780,7 +780,7 @@
                     "endOffset": 4978
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 54,
                         "startColumn": 4,
@@ -799,7 +799,7 @@
                     "endOffset": 5065
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 55,
                         "startColumn": 4,
@@ -818,7 +818,7 @@
                     "endOffset": 5166
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 56,
                         "startColumn": 4,
@@ -838,7 +838,7 @@
                     "endOffset": 8234
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 57,
                         "startColumn": 4,
@@ -859,7 +859,7 @@
                     "endOffset": 8420
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 101,
                         "startColumn": 4,
@@ -880,7 +880,7 @@
                     "endOffset": 11500
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 104,
                         "startColumn": 4,
@@ -901,7 +901,7 @@
                     "endOffset": 11698
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 148,
                         "startColumn": 4,
@@ -922,7 +922,7 @@
                     "endOffset": 11821
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 151,
                         "startColumn": 4,
@@ -943,7 +943,7 @@
                     "endOffset": 11944
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 153,
                         "startColumn": 4,
@@ -964,7 +964,7 @@
                     "endOffset": 12057
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 155,
                         "startColumn": 4,
@@ -985,7 +985,7 @@
                     "endOffset": 12240
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 157,
                         "startColumn": 4,
@@ -1006,7 +1006,7 @@
                     "endOffset": 12371
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 160,
                         "startColumn": 4,
@@ -1027,7 +1027,7 @@
                     "endOffset": 12572
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 162,
                         "startColumn": 4,
@@ -1047,7 +1047,7 @@
                     "endOffset": 12661
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 165,
                         "startColumn": 4,
@@ -1066,7 +1066,7 @@
                     "endOffset": 12772
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 166,
                         "startColumn": 4,
@@ -1085,7 +1085,7 @@
                     "endOffset": 12899
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 167,
                         "startColumn": 4,
@@ -1104,7 +1104,7 @@
                     "endOffset": 13000
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 168,
                         "startColumn": 4,
@@ -1123,7 +1123,7 @@
                     "endOffset": 13095
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 169,
                         "startColumn": 4,
@@ -1142,7 +1142,7 @@
                     "endOffset": 13218
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 170,
                         "startColumn": 4,
@@ -1161,7 +1161,7 @@
                     "endOffset": 13347
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 171,
                         "startColumn": 4,
@@ -1180,7 +1180,7 @@
                     "endOffset": 13464
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 172,
                         "startColumn": 4,
@@ -1200,7 +1200,7 @@
                     "endOffset": 13641
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 173,
                         "startColumn": 4,
@@ -1220,7 +1220,7 @@
                     "endOffset": 13740
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 176,
                         "startColumn": 4,
@@ -1240,7 +1240,7 @@
                     "endOffset": 13875
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 177,
                         "startColumn": 4,
@@ -1261,7 +1261,7 @@
                     "endOffset": 14018
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 179,
                         "startColumn": 4,
@@ -1282,7 +1282,7 @@
                     "endOffset": 14153
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 181,
                         "startColumn": 4,
@@ -1303,7 +1303,7 @@
                     "endOffset": 14272
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 183,
                         "startColumn": 4,
@@ -1324,7 +1324,7 @@
                     "endOffset": 14473
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 185,
                         "startColumn": 4,
@@ -1345,7 +1345,7 @@
                     "endOffset": 14592
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 189,
                         "startColumn": 4,
@@ -1365,7 +1365,7 @@
                     "endOffset": 14685
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 191,
                         "startColumn": 4,
@@ -1384,7 +1384,7 @@
                     "endOffset": 14796
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 192,
                         "startColumn": 4,
@@ -1403,7 +1403,7 @@
                     "endOffset": 14852
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 193,
                         "startColumn": 4,
@@ -1423,7 +1423,7 @@
                     "endOffset": 14959
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 194,
                         "startColumn": 4,
@@ -1444,7 +1444,7 @@
                     "endOffset": 15154
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 196,
                         "startColumn": 4,
@@ -1465,7 +1465,7 @@
                     "endOffset": 15265
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 200,
                         "startColumn": 4,
@@ -1486,7 +1486,7 @@
                     "endOffset": 15398
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 202,
                         "startColumn": 4,
@@ -1506,7 +1506,7 @@
                     "endOffset": 15493
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 204,
                         "startColumn": 4,
@@ -1525,7 +1525,7 @@
                     "endOffset": 15584
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 205,
                         "startColumn": 4,
@@ -1544,7 +1544,7 @@
                     "endOffset": 15675
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 206,
                         "startColumn": 4,
@@ -1563,7 +1563,7 @@
                     "endOffset": 15792
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 207,
                         "startColumn": 4,
@@ -1583,7 +1583,7 @@
                     "endOffset": 15931
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 208,
                         "startColumn": 4,
@@ -1604,7 +1604,7 @@
                     "endOffset": 16444
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 210,
                         "startColumn": 4,
@@ -1625,7 +1625,7 @@
                     "endOffset": 16969
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 220,
                         "startColumn": 4,
@@ -1646,7 +1646,7 @@
                     "endOffset": 17649
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 230,
                         "startColumn": 4,
@@ -1666,7 +1666,7 @@
                     "endOffset": 17706
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 240,
                         "startColumn": 4,
@@ -1685,7 +1685,7 @@
                     "endOffset": 17764
                 },
                 "from": {
-                    "file": "C:\\Users\\pc\\Desktop\\Bogon\\onbid\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\jo\\AndroidStudioProjects\\Onbid\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 241,
                         "startColumn": 4,
