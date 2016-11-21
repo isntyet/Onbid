@@ -16,7 +16,7 @@
                 android:src="@drawable/kakao_default_profile_image"
                 android:minHeight="100dp"
                 android:scaleType="centerCrop"
-                android:alpha="0.8"
+                android:alpha="0.7"
                 />
 
             <TextView
