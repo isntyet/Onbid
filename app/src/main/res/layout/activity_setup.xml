@@ -15,12 +15,14 @@
                 android:id="@+id/userProfile"
                 android:src="@drawable/kakao_default_profile_image"
                 android:minHeight="100dp"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                android:alpha="0.7"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="#000000"
                 android:text="Bogon"
                 android:textSize="25sp"
                 android:id="@+id/userNickName"
