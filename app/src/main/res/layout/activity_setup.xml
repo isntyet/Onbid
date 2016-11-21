@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -12,7 +13,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/userProfile"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/kakao_default_profile_image"
                 android:minHeight="100dp"
                 android:scaleType="centerCrop" />
 
@@ -31,45 +32,30 @@
 
         </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="10dp">
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="55dp"
             android:id="@+id/kakaologout_tv"
             android:text="Logout"
             android:textSize="20dp"
             android:onClick="onClick"
             android:gravity="center"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="10dp">
-
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="55dp"
             android:id="@+id/mycomments_tv"
             android:text="내 댓글 보기"
             android:textSize="20dp"
             android:onClick="onClick"
             android:gravity="center"/>
 
-    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mycomments_list_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="invisible"
         android:layout_marginTop="8dp"
         />
 

@@ -1,5 +1,6 @@
 package com.ks.onbid.setup;
 
+import android.animation.ValueAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -29,7 +34,6 @@ import com.ks.onbid.login.KakaoLoginActivity;
 import com.ks.onbid.login.KakaoSignupActivity;
 import com.ks.onbid.utill.Preferences;
 import com.ks.onbid.vo.Comment;
-import com.ks.onbid.vo.SaleItem;
 
 import java.util.ArrayList;
 
@@ -38,26 +42,28 @@ import java.util.ArrayList;
  */
 public class SetupActivity extends AppCompatActivity {
 
-    private SaleItem saleItem;
 
-    private Comment comment;
+    private String foldText = "접기";
+    private String spreadText = "내 댓글 보기";
+
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
 
-    //private Button btnComment;
     private RecyclerView rvMyCommentsList;
     private RecyclerView.LayoutManager layoutManager;
-
-    //private CommentAdapter commentAdapter;
 
     private ArrayList<Comment> commentList;
 
     public Preferences sp;
+    TextView mycomments_tv;
     TextView userNickname_tv;
     private NetworkImageView userProfile_iv;
 
-
     String userNickname;
+
+    private boolean isViewExpanded = false;
+    private int originalHeight_rv = 0;
+    private int originalHeight_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,9 +87,16 @@ public class SetupActivity extends AppCompatActivity {
         userProfile_iv = (NetworkImageView) findViewById(R.id.userProfile);
 
         TextView logout_tv = (TextView) findViewById(R.id.kakaologout_tv);
-        TextView mycomments_tv = (TextView) findViewById(R.id.mycomments_tv);
+        mycomments_tv = (TextView) findViewById(R.id.mycomments_tv);
 
-        loadMyComments();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                loadMyComments();
+            }
+        });
+
+        thread.start();
 
     }
 
@@ -99,20 +112,111 @@ public class SetupActivity extends AppCompatActivity {
                 .getImageLoader();
         final String UserProfile = sp.getKakaoProfileUrl();
         mImageLoader.get(UserProfile, ImageLoader.getImageListener(userProfile_iv,
-                R.mipmap.ic_launcher, android.R.drawable.ic_menu_report_image));
+                R.drawable.kakao_default_profile_image, android.R.drawable.ic_menu_report_image));
         userProfile_iv.setImageUrl(UserProfile, mImageLoader);
+
     }
 
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.kakaologout_tv:
-                onClickUnlink();
-                break;
-            case R.id.mycomments_tv:
-                loadMyComments();
-                break;
+    public void onClick(final View v) {
+        ValueAnimator valueAnimator = null;
+        if (v.getId() == R.id.kakaologout_tv) {
+            onClickUnlink();
+
+        } else if (v.getId() == R.id.mycomments_tv) {
+            originalHeight_btn = v.getHeight();
+            int oringinHeight_rv = rvMyCommentsList.getMeasuredHeight();
+            if (!isViewExpanded) {
+
+                mycomments_tv.setText(foldText);
+                rvMyCommentsList.setVisibility(View.VISIBLE);
+                rvMyCommentsList.setEnabled(true);
+                isViewExpanded = true;
+
+                valueAnimator = ValueAnimator.ofInt(originalHeight_rv + originalHeight_btn + (int) (originalHeight_rv * 2.0),
+                        originalHeight_rv + originalHeight_btn);
+
+                Animation popupAnimation = new AlphaAnimation(0.00f, 1.00f);
+
+                popupAnimation.setDuration(300);
+
+                popupAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        rvMyCommentsList.setVisibility(View.VISIBLE);
+                        rvMyCommentsList.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+                rvMyCommentsList.startAnimation(popupAnimation);
+
+                valueAnimator.setDuration(200);
+                valueAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+                valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        Integer value = (Integer) animation.getAnimatedValue();
+                        v.getLayoutParams().height = value.intValue();
+                        v.requestLayout();
+                    }
+                });
+                valueAnimator.start();
+
+                Log.i("TAG111111", String.valueOf(oringinHeight_rv) + " + " + String.valueOf(originalHeight_rv));
+
+            } else {
+                mycomments_tv.setText(spreadText);
+
+                isViewExpanded = false;
+                valueAnimator = ValueAnimator.ofInt(originalHeight_rv + originalHeight_btn + (int) (originalHeight_rv * 2.0),
+                        originalHeight_rv + originalHeight_btn);
+
+                Animation fadeoutAnimation = new AlphaAnimation(1.00f, 0.00f);
+
+                fadeoutAnimation.setDuration(300);
+
+                fadeoutAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        rvMyCommentsList.setVisibility(View.INVISIBLE);
+                        rvMyCommentsList.setEnabled(false);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+                rvMyCommentsList.startAnimation(fadeoutAnimation);
+
+            }
+            valueAnimator.setDuration(200);
+            valueAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
+            valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    Integer value = (Integer) animation.getAnimatedValue();
+                    v.getLayoutParams().height = value.intValue();
+                    v.requestLayout();
+                }
+            });
+            valueAnimator.start();
         }
     }
+
 
     @Override
     protected void onResume() {
@@ -146,7 +250,6 @@ public class SetupActivity extends AppCompatActivity {
                 }
                 rvMyCommentsList.setAdapter(new MyCommentAdapter(getApplicationContext(), commentList, R.layout.activity_setup));
             }
-
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -221,6 +324,5 @@ public class SetupActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-
 
 }
