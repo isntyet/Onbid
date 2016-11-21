@@ -217,7 +217,6 @@ public class SetupActivity extends AppCompatActivity {
         }
     }
 
-
     @Override
     protected void onResume() {
         commentList.clear();
@@ -300,8 +299,6 @@ public class SetupActivity extends AppCompatActivity {
                                 dialog.dismiss();
                             }
                         }).show();
-
-
     }
 
     protected void killprocess() {
