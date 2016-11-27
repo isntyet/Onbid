@@ -378,19 +378,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             DATE_FLAG = 2;
             loadCanlenderDialog();
         } else if (v.getId() == btnSearch.getId()) {
-            getSaleList();
+//            getSaleList();
+            loadData();
             imm.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         } else if (v.getId() == btnSetup.getId()) {
+            materialSheetFab.hideSheet();
             startActivity(new Intent(this, SetupActivity.class));
         } else if (v.getId() == btnCommunity.getId()) {
+            materialSheetFab.hideSheet();
             startActivity(new Intent(this, CommunityActivity.class));
         } else if(v.getId() == btnChat.getId()){
+            materialSheetFab.hideSheet();
             startActivity(new Intent(this, ChatActivity.class));
         } else if (v.getId() == btnResearch.getId()) {
 
             materialSheetFab.hideSheet();
             //nsMain.fullScroll(View.FOCUS_BACKWARD);
-            //nsMain.smoothScrollTo(0, 0);
+            rvSaleList.smoothScrollToPosition(0);
         }
     }
 
