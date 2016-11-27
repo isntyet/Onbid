@@ -3,6 +3,7 @@ package com.ks.onbid.main;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
@@ -43,13 +44,15 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, DatePickerDialog.OnDateSetListener, MainAdapter.OnLoadMoreListener {
 
     private RecyclerView rvSaleList;
+    private MainAdapter adapter;
     private NestedScrollView nsMain;
     private LinearLayoutManager layoutManager;
     private CoordinatorLayout clMain;
     private BackPressCloseHandler backPressCloseHandler;
+    //private SwipeRefreshLayout swipeRefresh;
 
     //처분방식 버튼
     private Button[] btnDPSL;
@@ -108,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView btnCommunity;
     private TextView btnChat;
 
+    private int pageNo = 1;
 
     private ArrayList<SaleItem> saleList;
 
@@ -116,13 +120,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        saleList = new ArrayList<SaleItem>();
+
         backPressCloseHandler = new BackPressCloseHandler(this);
 
         setInitUI();
 
+        setupFab();
+
         getSaleList();
 
-        setupFab();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("MainActivity_", "onStart");
+        loadData();
     }
 
     private void setupFab() {
@@ -180,23 +194,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void getSaleList() {
-        //saleList.clear();
-        saleList = onlistRequest();
-        rvSaleList.removeAllViewsInLayout();
-        layoutManager = new LinearLayoutManager(getApplicationContext());
-        rvSaleList.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(this);
+
         rvSaleList.setLayoutManager(layoutManager);
-        rvSaleList.setAdapter(new SaleAdapter(getApplicationContext(), saleList, R.layout.activity_main));
+
+        adapter = new MainAdapter(this, this);
+        adapter.setLinearLayoutManager(layoutManager);
+        adapter.setRecyclerView(rvSaleList);
+        rvSaleList.setAdapter(adapter);
+        //swipeRefresh.setOnRefreshListener(this);
+
     }
 
     private void setInitUI() {
         clMain = (CoordinatorLayout) findViewById(R.id.cl_main);
-        nsMain = (NestedScrollView) findViewById(R.id.ns_main);
+        //nsMain = (NestedScrollView) findViewById(R.id.ns_main);
         rvSaleList = (RecyclerView) findViewById(R.id.rv_sale_list);
         layoutManager = new LinearLayoutManager(getApplicationContext());
-        rvSaleList.setNestedScrollingEnabled(false);
-        rvSaleList.setHasFixedSize(true);
-        rvSaleList.setLayoutManager(layoutManager);
+        //swipeRefresh = (SwipeRefreshLayout) findViewById(swipeRefresh) ;
+        //rvSaleList.setNestedScrollingEnabled(false);
+        //rvSaleList.setHasFixedSize(true);
+        //rvSaleList.setLayoutManager(layoutManager);
 
         /////////////////////////////////처분방식 버튼 초기 세팅
         btnDPSL = new Button[3];
@@ -372,7 +390,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             materialSheetFab.hideSheet();
             //nsMain.fullScroll(View.FOCUS_BACKWARD);
-            nsMain.smoothScrollTo(0, 0);
+            //nsMain.smoothScrollTo(0, 0);
         }
     }
 
@@ -399,10 +417,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void loadUseDialog(final ArrayList<UseCode> list, final Button btn) {
-        UseDialogAdapter adapter = new UseDialogAdapter(this, list);
+        UseDialogAdapter UseAdapter = new UseDialogAdapter(this, list);
 
         DialogPlus dialog = DialogPlus.newDialog(this)
-                .setAdapter(adapter)
+                .setAdapter(UseAdapter)
                 .setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(DialogPlus dialog, Object item, View view, int position) {
@@ -444,10 +462,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void loadAddrDialog(final ArrayList<String> list, final Button btn) {
-        AddrDialogAdapter adapter = new AddrDialogAdapter(this, list);
+        AddrDialogAdapter AddAapter = new AddrDialogAdapter(this, list);
 
         DialogPlus dialog = DialogPlus.newDialog(this)
-                .setAdapter(adapter)
+                .setAdapter(AddAapter)
                 .setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(DialogPlus dialog, Object item, View view, int position) {
@@ -545,7 +563,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String goodNo = "" + etGoodNo.getText().toString();
 
 
-        request.setParams(DPSLValue, useValue_1, useValue_2, addrValue_1, addrValue_2, addrValue_3, goodsPriceFrom, goodsPriceTo, openPriceFrom, openPriceTo, goodName, dateFromValue, dateToValue, goodNo, "1");
+        request.setParams(DPSLValue, useValue_1, useValue_2, addrValue_1, addrValue_2, addrValue_3, goodsPriceFrom, goodsPriceTo, openPriceFrom, openPriceTo, goodName, dateFromValue, dateToValue, goodNo, pageNo+"");
+
         return request.startRequest();
     }
 
@@ -564,4 +583,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onBackPressed() {
         backPressCloseHandler.onBackPressed();
     }
+
+
+    /*@Override
+    public void onRefresh() {
+        Log.d("MainActivity_", "onRefresh");
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                swipeRefresh.setRefreshing(false);
+                pageNo = 1;
+                loadData();
+
+            }
+        }, 3000);
+    }
+*/
+
+    @Override
+    public void onLoadMore() {
+        Log.d("MainActivity_", "onLoadMore");
+        adapter.setProgressMore(true);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                saleList.clear();
+                adapter.setProgressMore(false);
+
+                pageNo++;
+                saleList = onlistRequest();
+
+                adapter.addItemMore(saleList);
+                adapter.setMoreLoading(false);
+            }
+        },2000);
+    }
+
+    private void loadData() {
+        saleList.clear();
+        saleList = onlistRequest();
+
+        adapter.addAll(saleList);
+    }
+
+
 }

@@ -1,9 +1,7 @@
 package com.ks.onbid.login;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -12,7 +10,6 @@ import android.util.Log;
 
 import com.kakao.auth.ISessionCallback;
 import com.kakao.auth.Session;
-
 import com.kakao.util.exception.KakaoException;
 import com.kakao.util.helper.log.Logger;
 import com.ks.onbid.R;

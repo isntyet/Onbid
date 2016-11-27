@@ -30,6 +30,7 @@ import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.UnLinkResponseCallback;
 import com.kakao.util.helper.log.Logger;
 import com.ks.onbid.R;
+import com.ks.onbid.login.GlobalApplication;
 import com.ks.onbid.login.KakaoLoginActivity;
 import com.ks.onbid.login.KakaoSignupActivity;
 import com.ks.onbid.utill.Preferences;
@@ -53,6 +54,8 @@ public class SetupActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
 
     private ArrayList<Comment> commentList;
+
+    public ImageLoader imageLoader = GlobalApplication.getGlobalApplicationContext().getImageLoader();
 
     public Preferences sp;
     TextView mycomments_tv;
@@ -104,16 +107,13 @@ public class SetupActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        ImageLoader mImageLoader;
         userNickname = sp.getKakaoNickname();
         userNickname_tv.setText(userNickname);
 
-        mImageLoader = MySingletonForVolleyRequestQueue.getInstance(this.getApplicationContext())
-                .getImageLoader();
-        final String UserProfile = sp.getKakaoProfileUrl();
-        mImageLoader.get(UserProfile, ImageLoader.getImageListener(userProfile_iv,
-                R.drawable.kakao_default_profile_image, android.R.drawable.ic_menu_report_image));
-        userProfile_iv.setImageUrl(UserProfile, mImageLoader);
+        userProfile_iv.setErrorImageResId(R.drawable.kakao_default_profile_image);
+        if ((!"".equals(sp.getKakaoProfileUrl())) && (sp.getKakaoProfileUrl() != null)) {
+            userProfile_iv.setImageUrl(sp.getKakaoProfileUrl(), imageLoader);
+        }
 
     }
 

@@ -39,7 +39,7 @@ public class SaleListApiRequest extends ApiRequest {
         super.setParam("PBCT_BEGN_DTM", pbct_begn_dtm);
         super.setParam("PBCT_CLS_DTM", pbct_cls_dtm);
         super.setParam("CLTR_MNMT_NO", cltr_mnmt_no);
-        super.setParam("numOfRows", "100");
+        super.setParam("numOfRows", "10");
         super.setParam("pageNo", page_no);
     }
 
